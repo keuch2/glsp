@@ -20,9 +20,13 @@ include __DIR__ . '/includes/header.php';
       </div>
     </div>
 
-    <h2 class="reveal" style="font-family:'Lora',serif;font-weight:500;font-size:2.2rem;margin:80px 0 40px;letter-spacing:-.01em">Registro completo · <em style="color:var(--gold-deep);font-style:italic">43 Grandes Maestros</em></h2>
+    <div class="registry-intro reveal">
+      <div class="chapter-mark"><span class="num">Nº 08</span><span class="line"></span><span class="label">Linaje</span></div>
+      <h2>Registro completo · <em>43 Grandes Maestros</em></h2>
+      <p class="lede">De Zerakhial en 1869 al Ser∴ Gran Maestro en funciones — más de siglo y medio de continuidad institucional ininterrumpida.</p>
+    </div>
 
-    <div class="reveal" style="overflow-x:auto">
+    <div class="reveal">
       <div class="registry">
         <div class="registry-head"><span>Nº</span><span>Nombre</span><span>Período</span></div>
         <div class="reg-row"><span class="reg-num">i.</span><span class="reg-name">Zerakhial</span><span class="reg-period">junio 1869</span></div>

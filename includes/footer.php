@@ -51,5 +51,11 @@
 
 <script src="<?= $base ?>assets/site.js"></script>
 <script src="<?= $base ?>assets/i18n.js"></script>
+<?php
+// Per-page JS: assets/pages/<script>.js (e.g. historia.php → historia.js)
+$pageKey = $pageKey ?? basename($_SERVER['SCRIPT_NAME'] ?? '', '.php');
+if (is_file(GLSP_ROOT . '/assets/pages/' . $pageKey . '.js')): ?>
+<script src="<?= $base ?>assets/pages/<?= $pageKey ?>.js"></script>
+<?php endif; ?>
 </body>
 </html>

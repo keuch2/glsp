@@ -1,0 +1,26 @@
+.contact-spread{display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:start}
+.contact-info-block{margin-bottom:50px;padding-bottom:50px;border-bottom:1px solid var(--rule-light)}
+.contact-info-block:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.contact-info-block .label{font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:14px;display:block}
+.contact-info-block h3{font-family:'Lora',serif;font-weight:500;font-size:1.5rem;margin-bottom:14px;letter-spacing:-.005em}
+.contact-info-block p,.contact-info-block a{font-family:'Lora',serif;font-size:1.05rem;line-height:1.7;color:var(--text)}
+.contact-info-block a:hover{color:var(--gold-deep)}
+.contact-info-block i{color:var(--gold);margin-right:10px}
+
+.contact-form{padding:50px;background:var(--bone);border:1px solid var(--rule)}
+.contact-form h2{font-family:'Lora',serif;font-weight:500;font-size:1.8rem;margin-bottom:30px;letter-spacing:-.005em}
+.form-row{margin-bottom:24px}
+.form-row.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.contact-form label{display:block;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:10px}
+.contact-form input,.contact-form textarea,.contact-form select{width:100%;padding:14px 18px;background:#fff;border:1px solid rgba(14,15,26,.15);font-family:'Lora',serif;font-size:1rem;color:var(--ink)}
+.contact-form input:focus,.contact-form textarea:focus,.contact-form select:focus{outline:none;border-color:var(--gold)}
+.contact-form textarea{min-height:140px;resize:vertical}
+.contact-form button{margin-top:14px;width:100%;justify-content:center}
+
+.map-block{aspect-ratio:16/9;background:#222;position:relative;overflow:hidden;margin-top:80px;border:1px solid var(--rule)}
+.map-block iframe{width:100%;height:100%;border:0}
+.map-overlay{position:absolute;left:30px;top:30px;background:rgba(14,15,26,.92);backdrop-filter:blur(8px);padding:30px;color:#fff;max-width:300px;border-left:3px solid var(--gold)}
+.map-overlay h4{font-family:'Lora',serif;font-weight:500;font-size:1.2rem;margin-bottom:10px;color:#fff}
+.map-overlay p{font-family:'Lora',serif;font-size:.9rem;line-height:1.6;color:rgba(255,255,255,.8)}
+
+@media(max-width:980px){.contact-spread{grid-template-columns:1fr;gap:40px}.form-row.two{grid-template-columns:1fr}}

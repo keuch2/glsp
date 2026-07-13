@@ -1,0 +1,21 @@
+.f-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:50px 0;margin:60px 0}
+.f-stat{padding:0 30px;border-right:1px solid var(--rule-light);text-align:center}
+.f-stat:last-child{border-right:none}
+.f-stat .n{font-family:'Lora',serif;font-weight:500;font-size:clamp(2.4rem,4vw,3.4rem);line-height:1;color:var(--gold)}
+.f-stat .l{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--text-mute);font-weight:600;margin-top:14px}
+
+.programs{display:grid;grid-template-columns:1fr 1fr;gap:60px;margin-top:60px}
+.program{padding:50px;background:var(--bone);border:1px solid var(--rule);position:relative;transition:all .3s}
+.program:hover{border-color:var(--gold);transform:translateY(-4px)}
+.program i{font-size:2.4rem;color:var(--gold-deep);margin-bottom:24px;display:block}
+.program h3{font-family:'Lora',serif;font-weight:500;font-size:1.6rem;margin-bottom:18px}
+.program p{font-family:'Lora',serif;font-size:1rem;line-height:1.7;color:var(--text-mute);margin-bottom:14px}
+
+.donate-cta{padding:80px 60px;background:var(--ink);color:#fff;text-align:center;position:relative;overflow:hidden;margin-top:80px}
+.donate-cta::before{content:'';position:absolute;inset:0;background:url('/glsp_assets/filantropia-slide02.jpg') center/cover;opacity:.15}
+.donate-cta::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,15,26,.85),rgba(14,15,26,.65))}
+.donate-cta>*{position:relative;z-index:1}
+.donate-cta h3{font-family:'Lora',serif;font-weight:500;font-size:clamp(1.8rem,3vw,2.6rem);margin-bottom:20px;color:#fff}
+.donate-cta p{font-family:'Lora',serif;font-size:1.15rem;line-height:1.7;color:rgba(255,255,255,.85);max-width:600px;margin:0 auto 36px}
+
+@media(max-width:980px){.programs{grid-template-columns:1fr}.f-stats{grid-template-columns:repeat(2,1fr);gap:30px 0}.f-stat{padding:20px}.f-stat:nth-child(2){border-right:none}}

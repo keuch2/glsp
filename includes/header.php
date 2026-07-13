@@ -27,6 +27,13 @@ function nav_class(string $page, string $active): string {
 <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 <link rel="stylesheet" href="<?= $base ?>assets/site.css">
+<?php
+// Per-page CSS: assets/pages/<script>.css (e.g. historia.php → historia.css)
+$pageKey  = $pageKey ?? basename($_SERVER['SCRIPT_NAME'] ?? '', '.php');
+$pageCss  = GLSP_ROOT . '/assets/pages/' . $pageKey . '.css';
+if (is_file($pageCss)): ?>
+<link rel="stylesheet" href="<?= $base ?>assets/pages/<?= $pageKey ?>.css">
+<?php endif; ?>
 </head>
 <body>
 

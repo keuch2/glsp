@@ -27,6 +27,9 @@ There is no build step, no linter config, and no test suite. Changes to `.php`/`
 ### Request lifecycle (public pages)
 Each page sets `$activePage`, `$pageTitle` (optionally `$pageDesc`, `$depth`), requires `includes/db.php` + `includes/functions.php`, then wraps content between `includes/header.php` and `includes/footer.php`. `$depth` (0 at root, 1 in `noticias/`) drives the `$base` relative-path prefix used throughout header/footer links — set it correctly in any page placed in a subdirectory, or asset and nav links break.
 
+### Per-page CSS/JS (`assets/pages/`)
+`site.css` + `site.js` + `i18n.js` are global. Anything page-specific lives in `assets/pages/<name>.css` and `assets/pages/<name>.js`, where `<name>` is the page's script basename (e.g. `historia.php` → `assets/pages/historia.css`). `header.php` auto-links the `.css` and `footer.php` auto-links the `.js` **if the file exists** — no per-page `<link>`/`<script>` tags needed. The lookup key is `basename($_SERVER['SCRIPT_NAME'], '.php')`; override it by setting `$pageKey` before including the header (needed for subdir pages like `noticias/` to avoid colliding with `index`). These files were extracted from the original `html/*.html` mockups, which had this CSS/JS inline in a `<style>`/`<script>`; the conversion to `.php` dropped it, so **if a page renders unstyled, check whether its `assets/pages/` file exists**. Paths inside these CSS files must be **absolute** (`/glsp_assets/...`), since the file is served from `assets/pages/`, not the page's own directory.
+
 ### Data layer
 - Single SQLite DB at `data/cms.db` (WAL mode, foreign keys ON), accessed via the `db()` singleton in `includes/db.php`.
 - Three tables: `users`, `media`, `posts`. Schema is created by `admin/setup.php` / migrations already applied — inspect with `sqlite3 data/cms.db ".schema"`.

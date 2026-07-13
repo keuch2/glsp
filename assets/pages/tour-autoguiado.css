@@ -1,0 +1,70 @@
+.tour-hero{background:var(--ink);color:#fff;padding:160px 0 100px;position:relative;overflow:hidden}
+.tour-hero::before{content:'';position:absolute;inset:0;background:url('/templos/palma-asuncion/cover.jpg') center/cover;opacity:.18}
+.tour-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,15,26,.92) 0%,rgba(14,15,26,.7) 100%)}
+.tour-hero-inner{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center}
+.tour-hero h1{font-family:'Lora',serif;font-weight:500;font-size:clamp(2.6rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.015em;margin-bottom:28px;color:#fff}
+.tour-hero h1 em{font-style:italic;color:var(--gold)}
+.tour-hero .lede{font-family:'Lora',serif;font-size:1.18rem;line-height:1.7;color:rgba(255,255,255,.82);margin-bottom:36px;max-width:560px}
+
+.qr-box{position:relative;aspect-ratio:1/1;background:rgba(201,164,73,.08);border:1px solid rgba(201,164,73,.4);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:40px;text-align:center}
+.qr-box::before{content:'';position:absolute;top:14px;left:14px;right:-14px;bottom:-14px;border:1px solid var(--gold);z-index:-1}
+.qr-pattern{width:75%;aspect-ratio:1/1;display:grid;grid-template-columns:repeat(20,1fr);grid-auto-rows:1fr;gap:1px;background:transparent;margin-bottom:24px}
+.qr-pattern span{background:var(--gold)}
+.qr-box .label{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+.qr-box .hint{font-family:'Lora',serif;font-style:italic;font-size:.92rem;color:rgba(255,255,255,.6)}
+
+.coming-banner{background:var(--gold);color:var(--ink);padding:18px 0;text-align:center;font-family:'Montserrat';font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;justify-content:center;gap:14px}
+.coming-banner i{font-size:.9rem}
+
+/* Player */
+.player-section{padding:120px 0}
+.player-wrap{max-width:980px;margin:0 auto;padding:0 40px}
+.player-card{background:#fff;border:1px solid var(--rule);box-shadow:0 18px 50px rgba(14,15,26,.06);overflow:hidden}
+.player-now{padding:50px;background:var(--ink);color:#fff;display:grid;grid-template-columns:120px 1fr auto;gap:30px;align-items:center}
+.player-art{width:120px;height:120px;background:linear-gradient(135deg,#1f2034 0%,#0e0f1a 100%);border:1px solid rgba(201,164,73,.4);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Lora',serif;font-style:italic;font-size:2.6rem;position:relative}
+.player-art::after{content:'';position:absolute;inset:6px;border:1px solid rgba(201,164,73,.3)}
+.player-now-meta .ep-num{font-family:'Lora',serif;font-style:italic;color:var(--gold);font-size:.95rem;margin-bottom:6px}
+.player-now-meta h3{font-family:'Lora',serif;font-weight:500;font-size:1.5rem;color:#fff;line-height:1.2;margin-bottom:6px}
+.player-now-meta .duration{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500}
+.play-btn{width:64px;height:64px;border-radius:50%;background:var(--gold);border:none;color:var(--ink);font-size:1.2rem;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center}
+.play-btn:hover{background:#fff;transform:scale(1.06)}
+
+.progress-bar{height:4px;background:rgba(255,255,255,.08);position:relative;cursor:pointer}
+.progress-fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--gold);transition:width .2s linear}
+.progress-times{padding:12px 50px 24px;background:var(--ink);color:rgba(255,255,255,.6);font-family:'Lora',serif;font-style:italic;font-size:.85rem;display:flex;justify-content:space-between}
+
+.playlist{background:#fff}
+.playlist-head{padding:30px 50px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center}
+.playlist-head h4{font-family:'Lora',serif;font-weight:500;font-size:1.2rem}
+.playlist-head .count{font-family:'Lora',serif;font-style:italic;color:var(--gold-deep);font-size:.92rem}
+.playlist-row{display:grid;grid-template-columns:60px 1fr auto auto;gap:24px;padding:20px 50px;border-bottom:1px solid var(--rule-light);align-items:center;transition:background .2s;cursor:pointer}
+.playlist-row:hover{background:rgba(201,164,73,.04)}
+.playlist-row.active{background:rgba(201,164,73,.08)}
+.playlist-row.active .pl-num{color:var(--gold);font-weight:600}
+.pl-num{font-family:'Lora',serif;font-style:italic;color:var(--gold-deep);font-size:1rem}
+.pl-info h5{font-family:'Lora',serif;font-weight:500;font-size:1.05rem;line-height:1.3;margin-bottom:4px}
+.pl-info .pl-cat{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.pl-time{font-family:'Lora',serif;font-style:italic;color:var(--text-mute);font-size:.9rem}
+.pl-play{width:36px;height:36px;border:1px solid var(--rule);background:transparent;color:var(--gold-deep);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.pl-play:hover{background:var(--ink);color:var(--gold);border-color:var(--ink)}
+.playlist-row.active .pl-play{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+
+/* How it works */
+.howit{padding:120px 0;background:var(--paper)}
+.howit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;margin-top:60px}
+.howit-step{text-align:center;padding:0 20px}
+.howit-step-num{font-family:'Lora',serif;font-style:italic;font-size:3rem;color:var(--gold);line-height:1;margin-bottom:20px}
+.howit-step h4{font-family:'Lora',serif;font-weight:500;font-size:1.3rem;margin-bottom:14px}
+.howit-step p{font-family:'Lora',serif;font-size:1rem;line-height:1.65;color:var(--text-mute)}
+
+@media(max-width:880px){
+  .tour-hero-inner,.player-now,.howit-grid{grid-template-columns:1fr}
+  .tour-hero-inner{gap:50px}
+  .player-now{gap:20px;text-align:center;padding:30px}
+  .player-art{margin:0 auto}
+  .play-btn{margin:0 auto}
+  .playlist-row{grid-template-columns:40px 1fr auto;padding:16px 24px;gap:14px}
+  .pl-time{display:none}
+  .playlist-head{padding:20px 24px}
+  .progress-times{padding:12px 24px 20px}
+}

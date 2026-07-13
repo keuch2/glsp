@@ -1,0 +1,22 @@
+.member-page{min-height:calc(100vh - 110px);background:var(--ink);color:#fff;display:flex;align-items:center;padding:80px 0;position:relative;overflow:hidden}
+.member-page::before{content:'';position:absolute;inset:0;background:url('/glsp_assets/hero-slide03.jpg') center/cover;opacity:.12}
+.member-page::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(14,15,26,.7) 0%,rgba(14,15,26,.95) 100%)}
+.member-page>*{position:relative;z-index:1}
+.member-spread{max-width:560px;margin:0 auto;padding:0 40px;text-align:center}
+.member-form-wrap h1{font-family:'Lora',serif;font-weight:500;font-size:clamp(2.4rem,4vw,3.4rem);line-height:1.05;letter-spacing:-.015em;color:#fff;margin-bottom:24px}
+.member-form-wrap h1 em{font-style:italic;color:var(--gold)}
+.member-lead{font-family:'Lora',serif;font-size:1.15rem;line-height:1.7;color:rgba(255,255,255,.75);margin-bottom:40px}
+.member-form{max-width:440px;margin:0 auto;text-align:left}
+.page-chapter{justify-content:center}
+.member-protected{justify-content:center}
+.member-form label{display:block;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600;margin:24px 0 10px}
+.member-form input{width:100%;padding:16px 0;background:transparent;border:none;border-bottom:1px solid rgba(255,255,255,.2);color:#fff;font-family:'Lora',serif;font-size:1.05rem;transition:border-color .3s}
+.member-form input::placeholder{color:rgba(255,255,255,.3)}
+.member-form input:focus{outline:none;border-bottom-color:var(--gold)}
+.form-options{display:flex;justify-content:space-between;align-items:center;margin-top:24px;font-size:.85rem;color:rgba(255,255,255,.65);font-family:'Lora',serif}
+.form-options a{color:var(--gold)}
+.form-options a:hover{text-decoration:underline}
+.form-options label{margin:0;text-transform:none;letter-spacing:0;color:rgba(255,255,255,.65);display:flex;align-items:center;gap:8px;cursor:pointer;font-weight:400;font-family:'Lora',serif;font-size:.85rem}
+.member-form button{margin-top:36px;width:100%;justify-content:center}
+.member-protected{margin-top:30px;font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.5);display:flex;align-items:center;gap:10px}
+.member-protected i{color:var(--gold)}

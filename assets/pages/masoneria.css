@@ -1,0 +1,27 @@
+.qa-list{display:grid;grid-template-columns:1fr;gap:0;border-top:1px solid var(--rule)}
+.qa-item{border-bottom:1px solid var(--rule-light);transition:background .3s}
+.qa-item.open{background:rgba(201,164,73,.04)}
+.qa-trigger{width:100%;background:none;border:none;padding:36px 0;text-align:left;cursor:pointer;display:grid;grid-template-columns:80px 1fr auto;gap:30px;align-items:center;transition:padding .3s}
+.qa-item.open .qa-trigger,.qa-item:hover .qa-trigger{padding-left:20px}
+.qa-num{font-family:'Lora',serif;font-style:italic;font-size:1rem;color:var(--gold-deep);font-weight:400}
+.qa-q{font-family:'Lora',serif;font-weight:500;font-size:clamp(1.3rem,2vw,1.7rem);line-height:1.3;letter-spacing:-.005em;color:var(--ink)}
+.qa-toggle{width:42px;height:42px;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;color:var(--gold-deep);transition:all .3s}
+.qa-item.open .qa-toggle{background:var(--gold);border-color:var(--gold);color:var(--ink);transform:rotate(45deg)}
+.qa-answer{max-height:0;overflow:hidden;transition:max-height .5s ease}
+.qa-item.open .qa-answer{max-height:600px}
+.qa-answer-inner{padding:0 0 50px 110px;font-family:'Lora',serif;font-size:1.08rem;line-height:1.8;color:#2a2b35;max-width:880px}
+
+.symbols-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:60px}
+.symbol-card{padding:50px 30px;text-align:center;border:1px solid var(--rule);background:var(--bone);transition:all .3s}
+.symbol-card:hover{border-color:var(--gold);background:#fff}
+.symbol-glyph{font-family:'Lora',serif;font-style:italic;font-size:4rem;color:var(--gold);margin-bottom:24px;line-height:1}
+.symbol-card h4{font-family:'Lora',serif;font-weight:500;font-size:1.15rem;margin-bottom:10px}
+.symbol-card p{font-family:'Lora',serif;font-size:.92rem;line-height:1.55;color:var(--text-mute)}
+
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:60px;margin-top:80px}
+.principle{text-align:center;padding:0 20px}
+.principle .word{font-family:'Lora',serif;font-weight:500;font-size:clamp(2.4rem,4vw,3.6rem);color:var(--gold);font-style:italic;letter-spacing:-.02em;margin-bottom:18px}
+.principle p{font-family:'Lora',serif;font-size:1rem;line-height:1.7;color:rgba(255,255,255,.78)}
+
+@media(max-width:980px){.symbols-grid{grid-template-columns:repeat(2,1fr)}.principles{grid-template-columns:1fr;gap:40px}}
+@media(max-width:540px){.symbols-grid{grid-template-columns:1fr}.qa-answer-inner{padding-left:68px}.qa-trigger{grid-template-columns:50px 1fr auto;gap:18px}}

@@ -1,0 +1,35 @@
+/* Grandes Maestros — registro histórico estilizado */
+.registry-intro{max-width:720px;margin:88px 0 44px}
+.registry-intro h2{font-family:'Lora',serif;font-weight:500;font-size:clamp(1.9rem,3.4vw,2.6rem);
+  line-height:1.1;letter-spacing:-.01em;margin:8px 0 16px}
+.registry-intro h2 em{font-style:italic;color:var(--gold-deep)}
+.registry{border-top:2px solid var(--ink);counter-reset:gm}
+.registry-head,.reg-row{display:grid;grid-template-columns:80px 1fr minmax(150px,auto);gap:24px;align-items:baseline}
+.registry-head{padding:16px 20px;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;
+  font-weight:600;color:var(--gold-deep);border-bottom:1px solid var(--rule)}
+.reg-row{padding:17px 20px;border-bottom:1px solid var(--rule-light);position:relative;
+  transition:background .22s,padding-left .22s}
+.reg-row::before{content:'';position:absolute;left:0;top:0;bottom:0;width:0;background:var(--gold);transition:width .22s}
+.reg-row:hover{background:var(--bone);padding-left:28px}
+.reg-row:hover::before{width:3px}
+.reg-num{font-family:'Lora',serif;font-style:italic;font-size:1.05rem;color:var(--gold-deep);
+  text-transform:lowercase;font-variant:small-caps}
+.reg-name{font-family:'Lora',serif;font-size:1.18rem;color:var(--ink);line-height:1.35}
+.reg-period{font-family:'Montserrat',sans-serif;font-size:.9rem;color:var(--text-mute);
+  letter-spacing:.02em;text-align:right;white-space:nowrap}
+.reg-row.current{background:var(--ink);margin:8px 0;border-bottom:none}
+.reg-row.current::before{width:3px;background:var(--gold-bright)}
+.reg-row.current .reg-name{color:var(--bone);font-weight:500}
+.reg-row.current .reg-num{color:var(--gold-bright)}
+.reg-row.current .reg-period{color:var(--gold)}
+.reg-row.current:hover{padding-left:20px}
+.reg-name .star{display:inline-block;margin-left:12px;font-family:'Montserrat',sans-serif;font-size:.62rem;
+  letter-spacing:.2em;text-transform:uppercase;color:var(--gold-bright);vertical-align:middle;
+  padding:3px 9px;border:1px solid rgba(201,164,73,.5);border-radius:2px}
+
+@media(max-width:640px){
+  .registry-head{display:none}
+  .reg-row{grid-template-columns:44px 1fr;gap:6px 14px;padding:16px 14px}
+  .reg-period{grid-column:2;text-align:left;margin-top:2px}
+  .reg-row:hover{padding-left:20px}
+}
