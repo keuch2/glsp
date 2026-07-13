@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+
+# Base de datos SQLite (estado de runtime — se recrea con admin/setup.php)
+/data/cms.db
+/data/cms.db-shm
+/data/cms.db-wal
+
+# Media subida por el CMS (datos de runtime). Se versiona solo el .htaccess.
+/uploads/*
+!/uploads/.htaccess
+
+# Fotos de templos (147MB) — contenido pesado, fuera del repo
+/templos/
+
+# Prompts internos de generación (privados)
+/PROMPT_*.md

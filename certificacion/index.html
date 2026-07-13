@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="page_title">Certificado de Autenticidad · Gran Logia Simbólica del Paraguay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --red:#b01e2c;
+    --red-dark:#7a1520;
+    --gold:#d4a843;
+    --gold-soft:#e8c875;
+    --gold-deep:#a8842f;
+    --dark:#1a1a1a;
+    --darker:#0f0f0f;
+    --cream:#f7f1e1;
+    --ink:#2a1f0f;
+    --muted:#5a5042;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{min-height:100%}
+  body{
+    font-family:'Montserrat',sans-serif;
+    color:var(--ink);
+    background:
+      radial-gradient(circle at 20% 10%, rgba(212,168,67,.10), transparent 50%),
+      radial-gradient(circle at 80% 90%, rgba(176,30,44,.08), transparent 55%),
+      linear-gradient(135deg, #161616 0%, #0c0c0c 100%);
+    min-height:100vh;
+    line-height:1.6;
+  }
+
+  /* Top bar with language switcher */
+  .topbar{
+    max-width:920px;
+    margin:0 auto;
+    padding:28px 32px 0;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    color:var(--gold);
+  }
+  .home-link{
+    color:var(--gold);
+    text-decoration:none;
+    font-family:'Lora',serif;
+    font-style:italic;
+    font-size:13px;
+    letter-spacing:.4px;
+    border-bottom:1px solid transparent;
+    transition:border-color .2s;
+  }
+  .home-link:hover{border-color:var(--gold)}
+  .lang-switcher{display:flex;gap:6px}
+  .lang-btn{
+    background:transparent;
+    border:1px solid rgba(212,168,67,.5);
+    color:var(--gold);
+    padding:5px 10px;
+    font-family:'Montserrat',sans-serif;
+    font-size:11px;
+    font-weight:600;
+    letter-spacing:.5px;
+    cursor:pointer;
+    transition:all .25s;
+  }
+  .lang-btn:hover{border-color:var(--gold);background:rgba(212,168,67,.1)}
+  .lang-btn.active{background:var(--red);color:#fff;border-color:var(--red)}
+
+  /* Page */
+  .page{
+    max-width:820px;
+    margin:32px auto 0;
+    background:#fbf9f4;
+    padding:64px 72px 56px;
+    box-shadow:0 20px 60px rgba(0,0,0,.4);
+  }
+
+  .page-header{
+    text-align:center;
+    padding-bottom:28px;
+    border-bottom:1px solid rgba(168,132,47,.3);
+    margin-bottom:40px;
+  }
+  .page-emblem{
+    width:300px;
+    margin:0 auto 28px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+  .page-emblem img{width:100%;height:auto;object-fit:contain}
+  .page-title{
+    font-family:'Cinzel',serif;
+    font-weight:700;
+    color:var(--ink);
+    font-size:clamp(24px, 3vw, 30px);
+    letter-spacing:1.5px;
+    line-height:1.25;
+    text-transform:uppercase;
+  }
+
+  .page-content{
+    font-family:'Lora',serif;
+    font-size:16px;
+    line-height:1.8;
+    color:var(--ink);
+  }
+  .page-content p{margin-bottom:18px;text-align:justify}
+  .page-content strong{color:var(--red-dark);font-weight:600}
+
+  .section-heading{
+    font-family:'Cinzel',serif;
+    font-weight:600;
+    color:var(--red-dark);
+    font-size:13px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+    margin:36px 0 14px;
+  }
+
+  .signatory{
+    margin-top:44px;
+    padding-top:28px;
+    border-top:1px solid rgba(168,132,47,.3);
+    font-family:'Lora',serif;
+    font-size:14px;
+    line-height:1.7;
+    color:var(--muted);
+  }
+  .signatory-name{
+    font-family:'Cinzel',serif;
+    font-weight:600;
+    color:var(--red-dark);
+    font-size:14px;
+    letter-spacing:1.2px;
+    text-transform:uppercase;
+    margin-bottom:4px;
+  }
+  .signatory-title{font-style:italic}
+
+  .page-place{
+    margin-top:28px;
+    font-family:'Lora',serif;
+    font-style:italic;
+    color:var(--muted);
+    font-size:13px;
+    text-align:center;
+  }
+
+  /* Footer */
+  .footer{
+    max-width:820px;
+    margin:24px auto 40px;
+    padding:0 32px;
+    color:rgba(212,168,67,.6);
+    font-family:'Lora',serif;
+    font-style:italic;
+    font-size:12px;
+    letter-spacing:.3px;
+    text-align:center;
+  }
+
+  /* Print */
+  @media print{
+    body{background:#fff}
+    .topbar,.footer{display:none}
+    .page{box-shadow:none;max-width:100%;margin:0;padding:40px}
+  }
+
+  /* Responsive */
+  @media (max-width:720px){
+    .topbar{padding:20px 18px 0}
+    .page{padding:36px 22px;margin-top:20px}
+    .page-content{font-size:15px}
+    .page-content p{text-align:left}
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <a href="../historia-documentada/" class="home-link" data-i18n="back_link">← Volver a la obra</a>
+  <div class="lang-switcher">
+    <button class="lang-btn active" data-lang="es" onclick="setLanguage('es')">ES</button>
+    <button class="lang-btn" data-lang="en" onclick="setLanguage('en')">EN</button>
+    <button class="lang-btn" data-lang="pt" onclick="setLanguage('pt')">PT</button>
+  </div>
+</div>
+
+<main class="page">
+  <header class="page-header">
+    <div class="page-emblem">
+      <img src="logo.png" alt="GLSP">
+    </div>
+    <h1 class="page-title" data-i18n="cert_title">Certificado de Autenticidad</h1>
+  </header>
+
+  <div class="page-content">
+    <p data-i18n="cert_body">La <strong>Gran Logia Simbólica del Paraguay</strong> certifica la autenticidad documental y veracidad de la información de los documentos insertos en este libro, los cuales se encuentran archivados y resguardados en el <strong>Gran Archivo Histórico de la Gran Logia Simbólica del Paraguay</strong>, ubicado en el Solar Herrera del Valle de Asunción, Oriente del Paraguay.</p>
+
+    <div class="signatory">
+      <div class="signatory-name">Carlos Sosa Jovellanos</div>
+      <div class="signatory-title" data-i18n="signatory_title">Serenísimo Gran Maestro · Muy Respetable Hermano</div>
+    </div>
+
+    <div class="page-place" data-i18n="cert_place">Valle de Asunción · Oriente del Paraguay</div>
+  </div>
+</main>
+
+<div class="footer" data-i18n="footer_text">© 2026 Gran Logia Simbólica del Paraguay · Solar Herrera, Valle de Asunción</div>
+
+<script>
+const translations = {
+  es:{
+    page_title:"Certificado de Autenticidad · Gran Logia Simbólica del Paraguay",
+    back_link:"← Volver a la obra",
+    institution:"Gran Logia Simbólica del Paraguay",
+    cert_title:"Certificado de Autenticidad",
+    cert_body_html:'La <strong>Gran Logia Simbólica del Paraguay</strong> certifica la autenticidad documental y veracidad de la información de los documentos insertos en este libro, los cuales se encuentran archivados y resguardados en el <strong>Gran Archivo Histórico de la Gran Logia Simbólica del Paraguay</strong>, ubicado en el Solar Herrera del Valle de Asunción, Oriente del Paraguay.',
+    signatory_title:"Serenísimo Gran Maestro · Muy Respetable Hermano",
+    cert_place:"Valle de Asunción · Oriente del Paraguay",
+    footer_text:"© 2026 Gran Logia Simbólica del Paraguay · Solar Herrera, Valle de Asunción"
+  },
+  en:{
+    page_title:"Certificate of Authenticity · Gran Logia Simbólica del Paraguay",
+    back_link:"← Back to the book",
+    institution:"Gran Logia Simbólica del Paraguay",
+    cert_title:"Certificate of Authenticity",
+    cert_body_html:'The <strong>Gran Logia Simbólica del Paraguay</strong> certifies the documentary authenticity and truthfulness of the information contained in the documents included in this book, which are archived and safeguarded in the <strong>Grand Historical Archive of the Gran Logia Simbólica del Paraguay</strong>, located at the Solar Herrera in the Valley of Asunción, Orient of Paraguay.',
+    signatory_title:"Most Serene Grand Master · Most Worshipful Brother",
+    cert_place:"Valley of Asunción · Orient of Paraguay",
+    footer_text:"© 2026 Gran Logia Simbólica del Paraguay · Solar Herrera, Valley of Asunción"
+  },
+  pt:{
+    page_title:"Certificado de Autenticidade · Gran Logia Simbólica del Paraguay",
+    back_link:"← Voltar à obra",
+    institution:"Gran Logia Simbólica del Paraguay",
+    cert_title:"Certificado de Autenticidade",
+    cert_body_html:'A <strong>Gran Logia Simbólica del Paraguay</strong> certifica a autenticidade documental e veracidade das informações dos documentos inseridos neste livro, os quais se encontram arquivados e resguardados no <strong>Grande Arquivo Histórico da Gran Logia Simbólica del Paraguay</strong>, localizado no Solar Herrera do Vale de Assunção, Oriente do Paraguai.',
+    signatory_title:"Sereníssimo Grão-Mestre · Muito Respeitável Irmão",
+    cert_place:"Vale de Assunção · Oriente do Paraguai",
+    footer_text:"© 2026 Gran Logia Simbólica del Paraguay · Solar Herrera, Vale de Assunção"
+  }
+};
+
+function setLanguage(lang){
+  if(!translations[lang]) return;
+  const t = translations[lang];
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const k = el.getAttribute('data-i18n');
+    const htmlKey = k + '_html';
+    if(t[htmlKey] !== undefined){
+      el.innerHTML = t[htmlKey];
+    } else if(t[k] !== undefined){
+      if(el.tagName === 'TITLE') document.title = t[k];
+      else el.textContent = t[k];
+    }
+  });
+  document.querySelectorAll('.lang-btn').forEach(b=>b.classList.toggle('active', b.dataset.lang === lang));
+  document.documentElement.lang = lang;
+  localStorage.setItem('glsp_cert_lang', lang);
+}
+
+const saved = localStorage.getItem('glsp_cert_lang') || 'es';
+setLanguage(saved);
+</script>
+
+</body>
+</html>

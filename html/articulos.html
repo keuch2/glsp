@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Artículos Masónicos · GLSP</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.toc-list{border-top:1px solid var(--rule)}
+.toc-row{display:grid;grid-template-columns:80px 140px 1fr auto;gap:40px;padding:38px 0;border-bottom:1px solid var(--rule-light);align-items:center;cursor:pointer;transition:padding .3s,background .3s}
+.toc-row:hover{padding-left:20px;background:rgba(201,164,73,.04)}
+.toc-num{font-family:'Lora',serif;font-style:italic;color:var(--gold-deep);font-size:1rem}
+.toc-cat{font-size:.66rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.toc-title{font-family:'Lora',serif;font-weight:500;font-size:clamp(1.2rem,1.8vw,1.5rem);line-height:1.3;letter-spacing:-.005em}
+.toc-meta{font-family:'Lora',serif;font-style:italic;font-size:.88rem;color:var(--text-mute)}
+
+.featured-article{display:grid;grid-template-columns:1fr 1.2fr;gap:60px;align-items:center;padding-bottom:80px;margin-bottom:80px;border-bottom:1px solid var(--rule)}
+.featured-article-img{aspect-ratio:5/4;overflow:hidden;background:#222}
+.featured-article-img img{width:100%;height:100%;object-fit:cover}
+.featured-article .meta{display:flex;align-items:center;gap:14px;margin-bottom:20px}
+.featured-article h2{font-family:'Lora',serif;font-weight:500;font-size:clamp(1.8rem,2.6vw,2.6rem);line-height:1.18;margin-bottom:24px;letter-spacing:-.005em}
+.featured-article p{font-family:'Lora',serif;font-size:1.08rem;line-height:1.7;color:var(--text-mute);margin-bottom:30px}
+
+.cat-pills{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:60px}
+.cat-pill{padding:10px 20px;border:1px solid var(--rule);font-family:'Lora',serif;font-size:.95rem;color:var(--text);cursor:pointer;transition:all .25s;background:transparent}
+.cat-pill:hover,.cat-pill.active{background:var(--ink);color:var(--gold);border-color:var(--ink)}
+
+@media(max-width:880px){
+  .featured-article{grid-template-columns:1fr;gap:30px}
+  .toc-row{grid-template-columns:60px 1fr;gap:20px}
+  .toc-cat,.toc-meta{display:none}
+}
+</style>
+</head>
+<body>
+
+<div class="utility-bar"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span> Asunción · Paraguay</span><span class="utility-meta"><em>Año Masónico</em> 2026 · A∴L∴ 6026</span></div><div class="utility-right"><div class="lang"><span class="active">ES</span><span>EN</span><span>PT</span></div><a class="member-link" href="miembros.html"><i class="fas fa-key"></i> Área de Hermanos</a></div></div></div>
+
+<header class="masthead" id="masthead"><div class="masthead-inner"><a href="index.html" class="wordmark"><img src="glsp_assets/logo_glsp2026.png" alt="GLSP" class="wordmark-seal"></a><nav class="primary-nav"><div class="nav-item has-sub">Gran Logia<div class="submenu"><a href="gran-logia.html#mensaje"><span class="num">i</span> Mensaje del Gran Maestro</a><a href="noticias.html"><span class="num">ii</span> Actualidad</a><a href="gran-logia.html#gran-cuadro"><span class="num">iii</span> Gran Cuadro</a><a href="grandes-maestros.html"><span class="num">iv</span> Histórico de Grandes Maestros</a></div></div><a class="nav-item" href="historia.html">Historia</a><a class="nav-item" href="noticias.html">Noticias</a><a class="nav-item" href="centro-cultural.html">Centro Cultural</a><a class="nav-item" href="https://glsp.org.py/eventos" target="_blank" rel="noopener">Eventos<i class="fas fa-arrow-up-right-from-square nav-ext"></i></a><a class="nav-item" href="filantropia.html">Filantropía</a><a class="nav-item" href="masoneria.html">Masonería</a><a class="nav-item" href="contacto.html">Contacto</a></nav><button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button></div></header>
+
+<div class="mobile-panel" id="mobilePanel"><button class="mobile-close" id="mobileClose">&times;</button><a href="gran-logia.html"><span class="num">01</span> Gran Logia</a><a href="historia.html"><span class="num">02</span> Historia</a><a href="noticias.html"><span class="num">03</span> Noticias</a><a href="centro-cultural.html"><span class="num">04</span> Centro Cultural</a><a href="https://glsp.org.py/eventos" target="_blank" rel="noopener"><span class="num">05</span> Eventos</a><a href="masoneria.html"><span class="num">06</span> Masonería</a><a href="filantropia.html"><span class="num">07</span> Filantropía</a><a href="articulos.html"><span class="num">08</span> Artículos</a><a href="grandes-maestros.html"><span class="num">09</span> Grandes Maestros</a><a href="miembros.html"><span class="num">10</span> Área de Hermanos</a><a href="contacto.html"><span class="num">11</span> Contacto</a></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('glsp_assets/masoneria-slide02.jpg')"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Inicio</a><span class="sep">/</span><span>Artículos</span></div>
+    <div class="page-chapter"><span class="num">Nº 08</span><span class="line"></span><span class="label">Biblioteca</span></div>
+    <h1>Artículos <em>Masónicos</em></h1>
+    <p class="lede">Una biblioteca pública de pensamiento masónico paraguayo en formación — ensayos sobre filosofía, simbolismo, historia y ética desde la tradición de la Orden.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <article class="featured-article reveal">
+      <div class="featured-article-img"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+      <div>
+        <div class="meta"><span class="news-cat">Filosofía · Destacado</span><span class="news-item-date" style="font-family:Lora,serif;font-style:italic;color:var(--gold-deep)">2026</span></div>
+        <h2>El simbolismo del Compás y la Escuadra en la tradición masónica</h2>
+        <p>Una lectura contemporánea de los símbolos fundamentales de la Orden — su origen en la masonería operativa medieval, su transición a la masonería especulativa, y su vigencia como herramientas de reflexión moral en el siglo XXI.</p>
+        <p style="font-family:Lora,serif;font-style:italic;color:var(--gold-deep);margin-bottom:30px">— Por H∴ [Autor] · 24 minutos de lectura</p>
+        <a href="#" class="btn-primary">Leer ensayo completo <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </article>
+
+    <div class="cat-pills reveal">
+      <button class="cat-pill active">Todos</button>
+      <button class="cat-pill">Filosofía</button>
+      <button class="cat-pill">Historia</button>
+      <button class="cat-pill">Ética</button>
+      <button class="cat-pill">Simbolismo</button>
+      <button class="cat-pill">Ritual</button>
+      <button class="cat-pill">Masonería paraguaya</button>
+    </div>
+
+    <div class="toc-list reveal">
+      <a class="toc-row" href="#"><span class="toc-num">i.</span><span class="toc-cat">Historia</span><h3 class="toc-title">Los masones paraguayos en la reconstrucción nacional post-guerra de la Triple Alianza</h3><span class="toc-meta">H∴ [Autor] — 2026</span></a>
+      <a class="toc-row" href="#"><span class="toc-num">ii.</span><span class="toc-cat">Ética</span><h3 class="toc-title">Libertad de conciencia y tolerancia: pilares del pensamiento masónico universal</h3><span class="toc-meta">H∴ [Autor] — 2026</span></a>
+      <a class="toc-row" href="#"><span class="toc-num">iii.</span><span class="toc-cat">Simbolismo</span><h3 class="toc-title">El Templo interior — arquitectura simbólica del trabajo masónico</h3><span class="toc-meta">H∴ [Autor] — 2025</span></a>
+      <a class="toc-row" href="#"><span class="toc-num">iv.</span><span class="toc-cat">Historia</span><h3 class="toc-title">Bernardino Caballero y el resurgimiento de la masonería paraguaya en 1887</h3><span class="toc-meta">H∴ [Autor] — 2025</span></a>
+      <a class="toc-row" href="#"><span class="toc-num">v.</span><span class="toc-cat">Filosofía</span><h3 class="toc-title">Razón y tradición — la Masonería ante la modernidad</h3><span class="toc-meta">H∴ [Autor] — 2025</span></a>
+      <a class="toc-row" href="#"><span class="toc-num">vi.</span><span class="toc-cat">Ritual</span><h3 class="toc-title">El Rito Escocés Antiguo y Aceptado en el Paraguay</h3><span class="toc-meta">H∴ [Autor] — 2024</span></a>
+      <a class="toc-row" href="#"><span class="toc-num">vii.</span><span class="toc-cat">Masonería paraguaya</span><h3 class="toc-title">Los oficios del Cuadro Logial — una lectura ritual y administrativa</h3><span class="toc-meta">H∴ [Autor] — 2024</span></a>
+      <a class="toc-row" href="#"><span class="toc-num">viii.</span><span class="toc-cat">Simbolismo</span><h3 class="toc-title">La Letra G — Geometría, Gnosis, Gran Arquitecto</h3><span class="toc-meta">H∴ [Autor] — 2024</span></a>
+      <a class="toc-row" href="#"><span class="toc-num">ix.</span><span class="toc-cat">Historia</span><h3 class="toc-title">El Templo de Palma como espacio cívico — más allá del ritual masónico</h3><span class="toc-meta">H∴ [Autor] — 2023</span></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="footer"><div class="wrap"><div class="footer-top"><div class="footer-brand"><img src="glsp_assets/logo-footer.png" alt="" class="seal"><h3>Gran Logia Simbólica<br>del Paraguay</h3><div class="org-meta">Fundada en 1923</div><p>La obediencia masónica regular del Paraguay.</p></div><div><h4>Secciones</h4><ul><li><a href="gran-logia.html">Gran Logia</a></li><li><a href="historia.html">Historia</a></li><li><a href="noticias.html">Noticias</a></li><li><a href="centro-cultural.html">Centro Cultural</a></li><li><a href="masoneria.html">Masonería</a></li><li><a href="filantropia.html">Filantropía</a></li></ul></div><div class="footer-contact"><h4>Contacto</h4><span class="label">Dirección</span><p>Luís Alberto de Herrera Nº 1071<br>c/ Brasil — Asunción, Paraguay</p><span class="label">Correo</span><p>secejecutiva@glsp.org.py</p></div><div><h4>Síguenos</h4><p style="font-family:Lora,serif;font-style:italic;color:var(--gold)">@GranLogiaSimbolicaPy</p><div class="social-row"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-tiktok"></i></a></div></div></div><div class="footer-bottom"><div>© <span data-year>2026</span> Gran Logia Simbólica del Paraguay</div><div>Diseño & desarrollo <em>Mister Co.</em></div></div></div></footer>
+
+<button class="back-top" id="backTop"><i class="fas fa-arrow-up"></i></button>
+<script src="assets/site.js"></script>
+<script src="assets/i18n.js"></script>
+<script>
+document.querySelectorAll('.cat-pill').forEach(c=>c.addEventListener('click',()=>{
+  document.querySelectorAll('.cat-pill').forEach(x=>x.classList.remove('active'));
+  c.classList.add('active');
+}));
+</script>
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tour Autoguiado al Museo · GLSP</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.tour-hero{background:var(--ink);color:#fff;padding:160px 0 100px;position:relative;overflow:hidden}
+.tour-hero::before{content:'';position:absolute;inset:0;background:url('templos/palma-asuncion/cover.jpg') center/cover;opacity:.18}
+.tour-hero::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,15,26,.92) 0%,rgba(14,15,26,.7) 100%)}
+.tour-hero-inner{position:relative;z-index:1;max-width:1180px;margin:0 auto;padding:0 40px;display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center}
+.tour-hero h1{font-family:'Lora',serif;font-weight:500;font-size:clamp(2.6rem,5vw,4.2rem);line-height:1.05;letter-spacing:-.015em;margin-bottom:28px;color:#fff}
+.tour-hero h1 em{font-style:italic;color:var(--gold)}
+.tour-hero .lede{font-family:'Lora',serif;font-size:1.18rem;line-height:1.7;color:rgba(255,255,255,.82);margin-bottom:36px;max-width:560px}
+
+.qr-box{position:relative;aspect-ratio:1/1;background:rgba(201,164,73,.08);border:1px solid rgba(201,164,73,.4);display:flex;align-items:center;justify-content:center;flex-direction:column;padding:40px;text-align:center}
+.qr-box::before{content:'';position:absolute;top:14px;left:14px;right:-14px;bottom:-14px;border:1px solid var(--gold);z-index:-1}
+.qr-pattern{width:75%;aspect-ratio:1/1;display:grid;grid-template-columns:repeat(20,1fr);grid-auto-rows:1fr;gap:1px;background:transparent;margin-bottom:24px}
+.qr-pattern span{background:var(--gold)}
+.qr-box .label{font-size:.7rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold);font-weight:600;margin-bottom:8px}
+.qr-box .hint{font-family:'Lora',serif;font-style:italic;font-size:.92rem;color:rgba(255,255,255,.6)}
+
+.coming-banner{background:var(--gold);color:var(--ink);padding:18px 0;text-align:center;font-family:'Montserrat';font-size:.78rem;letter-spacing:.32em;text-transform:uppercase;font-weight:600;display:flex;align-items:center;justify-content:center;gap:14px}
+.coming-banner i{font-size:.9rem}
+
+/* Player */
+.player-section{padding:120px 0}
+.player-wrap{max-width:980px;margin:0 auto;padding:0 40px}
+.player-card{background:#fff;border:1px solid var(--rule);box-shadow:0 18px 50px rgba(14,15,26,.06);overflow:hidden}
+.player-now{padding:50px;background:var(--ink);color:#fff;display:grid;grid-template-columns:120px 1fr auto;gap:30px;align-items:center}
+.player-art{width:120px;height:120px;background:linear-gradient(135deg,#1f2034 0%,#0e0f1a 100%);border:1px solid rgba(201,164,73,.4);display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Lora',serif;font-style:italic;font-size:2.6rem;position:relative}
+.player-art::after{content:'';position:absolute;inset:6px;border:1px solid rgba(201,164,73,.3)}
+.player-now-meta .ep-num{font-family:'Lora',serif;font-style:italic;color:var(--gold);font-size:.95rem;margin-bottom:6px}
+.player-now-meta h3{font-family:'Lora',serif;font-weight:500;font-size:1.5rem;color:#fff;line-height:1.2;margin-bottom:6px}
+.player-now-meta .duration{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:rgba(255,255,255,.55);font-weight:500}
+.play-btn{width:64px;height:64px;border-radius:50%;background:var(--gold);border:none;color:var(--ink);font-size:1.2rem;cursor:pointer;transition:all .25s;display:flex;align-items:center;justify-content:center}
+.play-btn:hover{background:#fff;transform:scale(1.06)}
+
+.progress-bar{height:4px;background:rgba(255,255,255,.08);position:relative;cursor:pointer}
+.progress-fill{position:absolute;left:0;top:0;bottom:0;width:0;background:var(--gold);transition:width .2s linear}
+.progress-times{padding:12px 50px 24px;background:var(--ink);color:rgba(255,255,255,.6);font-family:'Lora',serif;font-style:italic;font-size:.85rem;display:flex;justify-content:space-between}
+
+.playlist{background:#fff}
+.playlist-head{padding:30px 50px;border-bottom:1px solid var(--rule);display:flex;justify-content:space-between;align-items:center}
+.playlist-head h4{font-family:'Lora',serif;font-weight:500;font-size:1.2rem}
+.playlist-head .count{font-family:'Lora',serif;font-style:italic;color:var(--gold-deep);font-size:.92rem}
+.playlist-row{display:grid;grid-template-columns:60px 1fr auto auto;gap:24px;padding:20px 50px;border-bottom:1px solid var(--rule-light);align-items:center;transition:background .2s;cursor:pointer}
+.playlist-row:hover{background:rgba(201,164,73,.04)}
+.playlist-row.active{background:rgba(201,164,73,.08)}
+.playlist-row.active .pl-num{color:var(--gold);font-weight:600}
+.pl-num{font-family:'Lora',serif;font-style:italic;color:var(--gold-deep);font-size:1rem}
+.pl-info h5{font-family:'Lora',serif;font-weight:500;font-size:1.05rem;line-height:1.3;margin-bottom:4px}
+.pl-info .pl-cat{font-size:.62rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.pl-time{font-family:'Lora',serif;font-style:italic;color:var(--text-mute);font-size:.9rem}
+.pl-play{width:36px;height:36px;border:1px solid var(--rule);background:transparent;color:var(--gold-deep);cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s}
+.pl-play:hover{background:var(--ink);color:var(--gold);border-color:var(--ink)}
+.playlist-row.active .pl-play{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+
+/* How it works */
+.howit{padding:120px 0;background:var(--paper)}
+.howit-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:50px;margin-top:60px}
+.howit-step{text-align:center;padding:0 20px}
+.howit-step-num{font-family:'Lora',serif;font-style:italic;font-size:3rem;color:var(--gold);line-height:1;margin-bottom:20px}
+.howit-step h4{font-family:'Lora',serif;font-weight:500;font-size:1.3rem;margin-bottom:14px}
+.howit-step p{font-family:'Lora',serif;font-size:1rem;line-height:1.65;color:var(--text-mute)}
+
+@media(max-width:880px){
+  .tour-hero-inner,.player-now,.howit-grid{grid-template-columns:1fr}
+  .tour-hero-inner{gap:50px}
+  .player-now{gap:20px;text-align:center;padding:30px}
+  .player-art{margin:0 auto}
+  .play-btn{margin:0 auto}
+  .playlist-row{grid-template-columns:40px 1fr auto;padding:16px 24px;gap:14px}
+  .pl-time{display:none}
+  .playlist-head{padding:20px 24px}
+  .progress-times{padding:12px 24px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="utility-bar"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span> Asunción · Paraguay</span><span class="utility-meta"><em>Año Masónico</em> 2026 · A∴L∴ 6026</span></div><div class="utility-right"><div class="lang"><span class="active">ES</span><span>EN</span><span>PT</span></div><a class="member-link" href="miembros.html"><i class="fas fa-key"></i> Área de Hermanos</a></div></div></div>
+
+<header class="masthead" id="masthead"><div class="masthead-inner"><a href="index.html" class="wordmark"><img src="glsp_assets/logo_glsp2026.png" alt="GLSP" class="wordmark-seal"></a><nav class="primary-nav"><div class="nav-item has-sub">Gran Logia<div class="submenu"><a href="gran-logia.html#mensaje"><span class="num">i</span> Mensaje del Gran Maestro</a><a href="noticias.html"><span class="num">ii</span> Actualidad</a><a href="gran-logia.html#gran-cuadro"><span class="num">iii</span> Gran Cuadro</a><a href="grandes-maestros.html"><span class="num">iv</span> Histórico de Grandes Maestros</a></div></div><a class="nav-item" href="historia.html">Historia</a><a class="nav-item" href="noticias.html">Noticias</a><a class="nav-item active" href="centro-cultural.html">Centro Cultural</a><a class="nav-item" href="https://glsp.org.py/eventos" target="_blank" rel="noopener">Eventos<i class="fas fa-arrow-up-right-from-square nav-ext"></i></a><a class="nav-item" href="filantropia.html">Filantropía</a><a class="nav-item" href="masoneria.html">Masonería</a><a class="nav-item" href="contacto.html">Contacto</a></nav><button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button></div></header>
+
+<div class="mobile-panel" id="mobilePanel"><button class="mobile-close" id="mobileClose">&times;</button><a href="gran-logia.html"><span class="num">01</span> Gran Logia</a><a href="historia.html"><span class="num">02</span> Historia</a><a href="noticias.html"><span class="num">03</span> Noticias</a><a href="centro-cultural.html"><span class="num">04</span> Centro Cultural</a><a href="https://glsp.org.py/eventos" target="_blank" rel="noopener"><span class="num">05</span> Eventos</a><a href="masoneria.html"><span class="num">06</span> Masonería</a><a href="filantropia.html"><span class="num">07</span> Filantropía</a><a href="articulos.html"><span class="num">08</span> Artículos</a><a href="grandes-maestros.html"><span class="num">09</span> Grandes Maestros</a><a href="miembros.html"><span class="num">10</span> Área de Hermanos</a><a href="contacto.html"><span class="num">11</span> Contacto</a></div>
+
+<div class="coming-banner"><i class="fas fa-circle-info"></i> Esta experiencia se encuentra en desarrollo · Vista previa</div>
+
+<section class="tour-hero">
+  <div class="tour-hero-inner">
+    <div>
+      <div class="breadcrumb" style="color:rgba(255,255,255,.6)"><a href="index.html" style="color:rgba(255,255,255,.6)">Inicio</a><span class="sep">/</span><a href="centro-cultural.html" style="color:rgba(255,255,255,.6)">Centro Cultural</a><span class="sep">/</span><span style="color:#fff">Tour Autoguiado</span></div>
+      <div class="page-chapter" style="margin-top:30px"><span class="num">Próximamente</span><span class="line"></span><span class="label">Tour autoguiado</span></div>
+      <h1>Recorré el Museo <em>en tu propio ritmo</em></h1>
+      <p class="lede">Una playlist de audio diseñada como compañera del visitante presencial. Escaneá el código QR de cada sala y dejate guiar por la voz de la propia institución — sala por sala, vitrina por vitrina, objeto por objeto.</p>
+      <div style="display:flex;gap:20px;flex-wrap:wrap">
+        <a href="centro-cultural.html" class="btn-primary">Volver al Centro Cultural <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="qr-box">
+      <div class="qr-pattern" id="qrPattern"></div>
+      <span class="label">Vista previa</span>
+      <span class="hint">Los códigos QR estarán<br>distribuidos por todo el museo</span>
+    </div>
+  </div>
+</section>
+
+<section class="player-section">
+  <div class="player-wrap">
+    <div style="text-align:center;margin-bottom:50px">
+      <div class="chapter-mark" style="justify-content:center"><span class="num">i.</span><span class="line"></span><span class="label">Reproductor</span></div>
+      <h2 style="font-family:'Lora',serif;font-weight:500;font-size:clamp(2rem,3.2vw,2.8rem);margin-top:14px;letter-spacing:-.01em">Vista previa <em style="font-style:italic;color:var(--gold-deep)">del recorrido</em></h2>
+    </div>
+
+    <div class="player-card">
+      <div class="player-now">
+        <div class="player-art">G</div>
+        <div class="player-now-meta">
+          <div class="ep-num">Pista 01 / 12</div>
+          <h3 id="nowTitle">Bienvenida al Museo de la Francmasonería Paraguaya</h3>
+          <div class="duration" id="nowDur">3:24 · Voz institucional</div>
+        </div>
+        <button class="play-btn" id="mainPlay"><i class="fas fa-play"></i></button>
+      </div>
+      <div class="progress-bar"><div class="progress-fill" id="progFill"></div></div>
+      <div class="progress-times"><span id="curTime">0:00</span><span id="totTime">3:24</span></div>
+
+      <div class="playlist">
+        <div class="playlist-head">
+          <h4>Playlist completa</h4>
+          <span class="count">12 pistas · 48 min total</span>
+        </div>
+        <div class="playlist-row active" data-t="Bienvenida al Museo de la Francmasonería Paraguaya" data-d="3:24">
+          <span class="pl-num">i.</span>
+          <div class="pl-info"><h5>Bienvenida al Museo de la Francmasonería Paraguaya</h5><span class="pl-cat">Introducción</span></div>
+          <span class="pl-time">3:24</span>
+          <button class="pl-play"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="playlist-row" data-t="Sala I — Los orígenes en Paraguay" data-d="4:12">
+          <span class="pl-num">ii.</span>
+          <div class="pl-info"><h5>Sala I — Los orígenes en Paraguay</h5><span class="pl-cat">Sala 1</span></div>
+          <span class="pl-time">4:12</span>
+          <button class="pl-play"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="playlist-row" data-t="Vitrina I.1 — Acta fundacional de la Logia Fe (1869)" data-d="2:48">
+          <span class="pl-num">iii.</span>
+          <div class="pl-info"><h5>Vitrina I.1 — Acta fundacional de la Logia Fe (1869)</h5><span class="pl-cat">Documento</span></div>
+          <span class="pl-time">2:48</span>
+          <button class="pl-play"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="playlist-row" data-t="Vitrina I.2 — Mandiles y regalia del siglo XIX" data-d="3:55">
+          <span class="pl-num">iv.</span>
+          <div class="pl-info"><h5>Vitrina I.2 — Mandiles y regalia del siglo XIX</h5><span class="pl-cat">Objetos rituales</span></div>
+          <span class="pl-time">3:55</span>
+          <button class="pl-play"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="playlist-row" data-t="Sala II — La fundación del Gran Oriente" data-d="5:08">
+          <span class="pl-num">v.</span>
+          <div class="pl-info"><h5>Sala II — La fundación del Gran Oriente</h5><span class="pl-cat">Sala 2</span></div>
+          <span class="pl-time">5:08</span>
+          <button class="pl-play"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="playlist-row" data-t="Vitrina II.1 — Constitución del GOP de 1894" data-d="3:30">
+          <span class="pl-num">vi.</span>
+          <div class="pl-info"><h5>Vitrina II.1 — Constitución del GOP de 1894</h5><span class="pl-cat">Documento</span></div>
+          <span class="pl-time">3:30</span>
+          <button class="pl-play"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="playlist-row" data-t="Sala III — El Templo Histórico de Palma" data-d="6:42">
+          <span class="pl-num">vii.</span>
+          <div class="pl-info"><h5>Sala III — El Templo Histórico de Palma</h5><span class="pl-cat">Sala 3</span></div>
+          <span class="pl-time">6:42</span>
+          <button class="pl-play"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="playlist-row" data-t="Reseña histórica del Templo de Palma" data-d="4:50">
+          <span class="pl-num">viii.</span>
+          <div class="pl-info"><h5>Reseña histórica del Templo de Palma</h5><span class="pl-cat">Patrimonio</span></div>
+          <span class="pl-time">4:50</span>
+          <button class="pl-play"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="playlist-row" data-t="Sala IV — Los 43 Grandes Maestros" data-d="5:24">
+          <span class="pl-num">ix.</span>
+          <div class="pl-info"><h5>Sala IV — Los 43 Grandes Maestros</h5><span class="pl-cat">Sala 4</span></div>
+          <span class="pl-time">5:24</span>
+          <button class="pl-play"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="playlist-row" data-t="Sala V — La Masonería en el siglo XX" data-d="4:18">
+          <span class="pl-num">x.</span>
+          <div class="pl-info"><h5>Sala V — La Masonería en el siglo XX</h5><span class="pl-cat">Sala 5</span></div>
+          <span class="pl-time">4:18</span>
+          <button class="pl-play"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="playlist-row" data-t="Biblioteca histórica — un recorrido temático" data-d="3:36">
+          <span class="pl-num">xi.</span>
+          <div class="pl-info"><h5>Biblioteca histórica — un recorrido temático</h5><span class="pl-cat">Archivo</span></div>
+          <span class="pl-time">3:36</span>
+          <button class="pl-play"><i class="fas fa-play"></i></button>
+        </div>
+        <div class="playlist-row" data-t="Cierre — La Masonería paraguaya hoy" data-d="2:18">
+          <span class="pl-num">xii.</span>
+          <div class="pl-info"><h5>Cierre — La Masonería paraguaya hoy</h5><span class="pl-cat">Final</span></div>
+          <span class="pl-time">2:18</span>
+          <button class="pl-play"><i class="fas fa-play"></i></button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="howit">
+  <div class="wrap">
+    <div style="text-align:center;max-width:680px;margin:0 auto">
+      <div class="chapter-mark" style="justify-content:center"><span class="num">ii.</span><span class="line"></span><span class="label">Cómo funciona</span></div>
+      <h2 style="font-family:'Lora',serif;font-weight:500;font-size:clamp(2rem,3.2vw,2.8rem);margin-top:14px;letter-spacing:-.01em">Tres pasos <em style="font-style:italic;color:var(--gold-deep)">para recorrer el museo</em></h2>
+      <p style="font-family:'Lora',serif;font-size:1.1rem;line-height:1.7;color:var(--text-mute);margin-top:20px">El tour autoguiado funcionará durante tu visita presencial al Museo Masónico. Sin descargar nada — sólo tu teléfono y curiosidad.</p>
+    </div>
+
+    <div class="howit-grid">
+      <div class="howit-step">
+        <div class="howit-step-num">i.</div>
+        <h4>Visitá el museo</h4>
+        <p>Agendá una visita al Museo de la Francmasonería Paraguaya en la sede del Gran Oriente, en Asunción.</p>
+      </div>
+      <div class="howit-step">
+        <div class="howit-step-num">ii.</div>
+        <h4>Escaneá el código QR</h4>
+        <p>En cada sala y vitrina destacada encontrarás un código QR. Escaneálo con la cámara de tu teléfono — sin descargar nada.</p>
+      </div>
+      <div class="howit-step">
+        <div class="howit-step-num">iii.</div>
+        <h4>Escuchá la narración</h4>
+        <p>Cada código abre una pista de audio que explica lo que tenés delante. Recorré a tu ritmo, en silencio respetuoso.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="footer"><div class="wrap"><div class="footer-top"><div class="footer-brand"><img src="glsp_assets/logo-footer.png" alt="" class="seal"><h3>Gran Logia Simbólica<br>del Paraguay</h3><div class="org-meta">Fundada en 1923</div><p>La obediencia masónica regular del Paraguay.</p></div><div><h4>Secciones</h4><ul><li><a href="gran-logia.html">Gran Logia</a></li><li><a href="historia.html">Historia</a></li><li><a href="noticias.html">Noticias</a></li><li><a href="centro-cultural.html">Centro Cultural</a></li><li><a href="masoneria.html">Masonería</a></li><li><a href="filantropia.html">Filantropía</a></li></ul></div><div class="footer-contact"><h4>Contacto</h4><span class="label">Dirección</span><p>Luís Alberto de Herrera Nº 1071<br>c/ Brasil — Asunción, Paraguay</p><span class="label">Correo</span><p>secejecutiva@glsp.org.py</p></div><div><h4>Síguenos</h4><p style="font-family:Lora,serif;font-style:italic;color:var(--gold)">@GranLogiaSimbolicaPy</p><div class="social-row"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-tiktok"></i></a></div></div></div><div class="footer-bottom"><div>© <span data-year>2026</span> Gran Logia Simbólica del Paraguay</div><div>Diseño & desarrollo <em>Mister Co.</em></div></div></div></footer>
+
+<button class="back-top" id="backTop"><i class="fas fa-arrow-up"></i></button>
+<script src="assets/site.js"></script>
+<script src="assets/i18n.js"></script>
+<script>
+// Generate decorative QR-like pattern (visual only, not scannable)
+(function(){
+  const grid=document.getElementById('qrPattern');
+  const seed='glsp2026';let h=0;for(const c of seed)h=(h*31+c.charCodeAt(0))%10000;
+  for(let i=0;i<400;i++){
+    const cell=document.createElement('span');
+    h=(h*1664525+1013904223)%4294967296;
+    if((h>>>0)%100<55||(i<3*20)||(i%20<3)||(i>=17*20)||(i%20>=17)){
+      cell.style.background='var(--gold)';
+    }else{cell.style.background='transparent'}
+    grid.appendChild(cell);
+  }
+  // Position markers (corners) for QR look
+  const corners=[[0,0],[0,17],[17,0]];
+  corners.forEach(([r,c])=>{
+    for(let dr=0;dr<3;dr++)for(let dc=0;dc<3;dc++){
+      const idx=(r+dr)*20+(c+dc);
+      grid.children[idx].style.background='var(--gold)';
+    }
+    for(let dr=0;dr<5;dr++)for(let dc=0;dc<5;dc++){
+      if(dr===0||dr===4||dc===0||dc===4){
+        const idx=(r-1+dr)*20+(c-1+dc);
+        if(idx>=0&&idx<400)grid.children[idx].style.background='var(--gold)';
+      }
+    }
+  });
+})();
+
+// Playlist UI
+let playing=false;
+const fill=document.getElementById('progFill');
+const mainPlay=document.getElementById('mainPlay');
+const cur=document.getElementById('curTime');
+const tot=document.getElementById('totTime');
+let progress=0,timer;
+function setActive(row){
+  document.querySelectorAll('.playlist-row').forEach(r=>r.classList.remove('active'));
+  row.classList.add('active');
+  document.getElementById('nowTitle').textContent=row.dataset.t;
+  document.getElementById('nowDur').textContent=row.dataset.d+' · Voz institucional';
+  tot.textContent=row.dataset.d;
+  progress=0;fill.style.width='0%';cur.textContent='0:00';
+}
+function togglePlay(){
+  playing=!playing;
+  mainPlay.innerHTML=playing?'<i class="fas fa-pause"></i>':'<i class="fas fa-play"></i>';
+  document.querySelectorAll('.playlist-row').forEach(r=>{
+    const ic=r.querySelector('.pl-play i');
+    if(r.classList.contains('active'))ic.className=playing?'fas fa-pause':'fas fa-play';
+    else ic.className='fas fa-play';
+  });
+  if(playing){
+    timer=setInterval(()=>{
+      progress+=1;
+      const p=Math.min(progress,200);
+      fill.style.width=(p/200*100)+'%';
+      const s=Math.floor(p/200*204);// 3:24 = 204s
+      cur.textContent=Math.floor(s/60)+':'+String(s%60).padStart(2,'0');
+      if(p>=200){togglePlay()}
+    },80);
+  }else{clearInterval(timer)}
+}
+mainPlay.addEventListener('click',togglePlay);
+document.querySelectorAll('.playlist-row').forEach(r=>{
+  r.addEventListener('click',()=>{
+    setActive(r);
+    if(!playing)togglePlay();
+  });
+});
+</script>
+</body>
+</html>

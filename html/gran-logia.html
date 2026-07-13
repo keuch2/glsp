@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Gran Logia · GLSP</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.org-tree{display:grid;grid-template-columns:repeat(3,1fr);gap:30px;margin-top:60px}
+.org-card{padding:40px 30px;background:var(--bone);border:1px solid var(--rule);position:relative;transition:all .3s}
+.org-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.org-card .ord{font-family:'Lora',serif;font-style:italic;color:var(--gold-deep);font-size:.85rem;margin-bottom:14px}
+.org-card h4{font-family:'Lora',serif;font-weight:500;font-size:1.3rem;margin-bottom:10px;line-height:1.3}
+.org-card .role{font-size:.66rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:14px}
+.org-card p{font-family:'Lora',serif;font-size:.92rem;line-height:1.6;color:var(--text-mute)}
+.org-card.principal{background:var(--ink);color:#fff;grid-column:span 3}
+.org-card.principal h4,.org-card.principal{color:#fff}
+.org-card.principal p{color:rgba(255,255,255,.75)}
+.org-card.principal .ord,.org-card.principal .role{color:var(--gold)}
+.officers-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px;margin-top:30px}
+.officer{text-align:center}
+.officer-avatar{width:120px;height:120px;border-radius:50%;background:linear-gradient(135deg,var(--paper-deep),var(--paper));margin:0 auto 18px;display:flex;align-items:center;justify-content:center;font-family:'Lora',serif;font-style:italic;color:var(--gold-deep);font-size:1.8rem;border:1px solid var(--rule)}
+.officer h5{font-family:'Lora',serif;font-weight:500;font-size:1.05rem;margin-bottom:4px}
+.officer .pos{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+@media(max-width:900px){.org-tree,.officers-grid{grid-template-columns:repeat(2,1fr)}.org-card.principal{grid-column:span 2}}
+@media(max-width:540px){.org-tree,.officers-grid{grid-template-columns:1fr}.org-card.principal{grid-column:span 1}}
+</style>
+</head>
+<body>
+
+<div class="utility-bar"><div class="utility-inner"><div class="utility-left"><span><span class="dot"></span> Asunción · Paraguay</span><span class="utility-meta"><em>Año Masónico</em> 2026 · A∴L∴ 6026</span></div><div class="utility-right"><div class="lang"><span class="active">ES</span><span>EN</span><span>PT</span></div><a class="member-link" href="miembros.html"><i class="fas fa-key"></i> Área de Hermanos</a></div></div></div>
+
+<header class="masthead" id="masthead"><div class="masthead-inner"><a href="index.html" class="wordmark"><img src="glsp_assets/logo_glsp2026.png" alt="GLSP" class="wordmark-seal"></a><nav class="primary-nav"><div class="nav-item has-sub active">Gran Logia<div class="submenu"><a href="gran-logia.html#mensaje"><span class="num">i</span> Mensaje del Gran Maestro</a><a href="noticias.html"><span class="num">ii</span> Actualidad</a><a href="gran-logia.html#gran-cuadro"><span class="num">iii</span> Gran Cuadro</a><a href="grandes-maestros.html"><span class="num">iv</span> Histórico de Grandes Maestros</a></div></div><a class="nav-item" href="historia.html">Historia</a><a class="nav-item" href="noticias.html">Noticias</a><a class="nav-item" href="centro-cultural.html">Centro Cultural</a><a class="nav-item" href="https://glsp.org.py/eventos" target="_blank" rel="noopener">Eventos<i class="fas fa-arrow-up-right-from-square nav-ext"></i></a><a class="nav-item" href="filantropia.html">Filantropía</a><a class="nav-item" href="masoneria.html">Masonería</a><a class="nav-item" href="contacto.html">Contacto</a></nav><button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button></div></header>
+
+<div class="mobile-panel" id="mobilePanel"><button class="mobile-close" id="mobileClose">&times;</button><a href="gran-logia.html"><span class="num">01</span> Gran Logia</a><a href="historia.html"><span class="num">02</span> Historia</a><a href="noticias.html"><span class="num">03</span> Noticias</a><a href="centro-cultural.html"><span class="num">04</span> Centro Cultural</a><a href="https://glsp.org.py/eventos" target="_blank" rel="noopener"><span class="num">05</span> Eventos</a><a href="masoneria.html"><span class="num">06</span> Masonería</a><a href="filantropia.html"><span class="num">07</span> Filantropía</a><a href="articulos.html"><span class="num">08</span> Artículos</a><a href="grandes-maestros.html"><span class="num">09</span> Grandes Maestros</a><a href="miembros.html"><span class="num">10</span> Área de Hermanos</a><a href="contacto.html"><span class="num">11</span> Contacto</a></div>
+
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('glsp_assets/hero-slide02.jpg')"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Inicio</a><span class="sep">/</span><span>Gran Logia</span></div>
+    <div class="page-chapter"><span class="num">Nº 01</span><span class="line"></span><span class="label">La Institución</span></div>
+    <h1>La Gran Logia <em>Simbólica del Paraguay</em></h1>
+    <p class="lede">Obediencia masónica regular del Paraguay desde 1923. Heredera del Gran Oriente del Paraguay (1894), reúne 82 logias bajo una misma jurisdicción reconocida por más de 70 obediencias del mundo.</p>
+  </div>
+</section>
+
+<section class="section section-paper" id="mensaje">
+  <div class="wrap">
+    <div class="gm-spread">
+      <div class="gm-portrait reveal">
+        <div class="gm-portrait-frame"><img src="glsp_assets/gran-maestro.png" alt=""></div>
+        <div class="gm-credit"><span class="gm-credit-line"></span><div class="gm-credit-text"><div class="name">Carlos Sosa Jovellanos</div><div class="role">Gran Maestro · 2025 / 2027</div></div></div>
+      </div>
+      <div class="gm-text reveal">
+        <div class="chapter-mark"><span class="num">i.</span><span class="line"></span><span class="label">Mensaje del Gran Maestro</span></div>
+        <h2>Palabras del <em>Ser∴ Gran Maestro</em></h2>
+        <div class="gm-prose">
+          <p>Mis apreciados hermanos, la Masonería en nuestro país cumple este año, 130 años de existencia desde la Constitución del Gran Oriente del Paraguay (GOP), como Asociación Civil de utilidad Pública, ocurrida en 1895 y que diera origen posterior a la Gran Logia Simbólica del Paraguay (GLSP) en el año 1923, institución que cumple 102 años de vida institucional.</p>
+          <p>Durante todos estos años transcurridos, el GOP y la GLSP han venido cumpliendo un rol esencial en la formación de hermanos con valores destinados a perfeccionar nuestra sociedad y las instituciones de nuestro país, con el fin de lograr la evolución de la humanidad hacia un destino universal de superación constante.</p>
+          <p>Tampoco hemos abandonado nuestro lema de amor a la humanidad y en tal sentido la Fundación Esperanza ha venido educando niños, jóvenes y adultos mayores para superar los límites que su realidad les impone.</p>
+          <div class="gm-pullquote">"Nos abrimos al mundo a través de este espacio informático para contribuir, con todas las otras Grandes Logias Regulares del Mundo, en el incansable objetivo de superación personal y social."</div>
+          <p>La Masonería ha hecho posible la evolución de la humanidad mediante la superación personal, social y los aportes que cada uno de los hermanos han hecho en diferentes épocas apostando por la libertad, la igualdad y la fraternidad. Seguiremos en la misma línea cumpliendo nuestra misión filantrópica.</p>
+          <p style="font-family:'Lora',serif;font-weight:500;font-style:italic;color:var(--gold-deep);margin-top:36px">— Ser∴ Gran Maestro Carlos Sosa Jovellanos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="gran-cuadro">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="chapter-mark"><span class="num">ii.</span><span class="line"></span><span class="label">Gran Cuadro 2025/2027</span></div>
+        <h2>Cuadro de <em>Grandes Oficiales</em></h2>
+      </div>
+      <p class="lede">Los Grandes Oficiales electos para el período 2025–2027 que conforman el gobierno institucional de la Gran Logia Simbólica del Paraguay.</p>
+    </div>
+
+    <div class="org-tree reveal">
+      <div class="org-card principal">
+        <div class="ord">— Cargo principal —</div>
+        <h4>Carlos Sosa Jovellanos</h4>
+        <div class="role">Ser∴ Gran Maestro</div>
+        <p>43° Gran Maestro de la Gran Logia Simbólica del Paraguay. Período 2025–2027.</p>
+      </div>
+      <div class="org-card">
+        <div class="ord">— ii —</div>
+        <h4>[Nombre del Vice GM]</h4>
+        <div class="role">Vice Gran Maestro</div>
+        <p>Asume la representación institucional en ausencia del Gran Maestro.</p>
+      </div>
+      <div class="org-card">
+        <div class="ord">— iii —</div>
+        <h4>[Gran Secretario]</h4>
+        <div class="role">Gran Secretario</div>
+        <p>Responsable de la documentación oficial y comunicaciones de la GLSP.</p>
+      </div>
+      <div class="org-card">
+        <div class="ord">— iv —</div>
+        <h4>[Gran Tesorero]</h4>
+        <div class="role">Gran Tesorero</div>
+        <p>Administración financiera y patrimonial de la institución.</p>
+      </div>
+    </div>
+
+    <h3 style="font-family:'Lora',serif;font-weight:500;font-size:1.6rem;margin-top:80px;margin-bottom:30px;font-style:italic;color:var(--gold-deep)">Otros Grandes Oficiales</h3>
+    <div class="officers-grid reveal">
+      <div class="officer"><div class="officer-avatar">i</div><h5>Gran Orador</h5><span class="pos">[Nombre H∴]</span></div>
+      <div class="officer"><div class="officer-avatar">ii</div><h5>Gran 1er Vigilante</h5><span class="pos">[Nombre H∴]</span></div>
+      <div class="officer"><div class="officer-avatar">iii</div><h5>Gran 2do Vigilante</h5><span class="pos">[Nombre H∴]</span></div>
+      <div class="officer"><div class="officer-avatar">iv</div><h5>Gran Hospitalario</h5><span class="pos">[Nombre H∴]</span></div>
+      <div class="officer"><div class="officer-avatar">v</div><h5>Gran Maestro de Ceremonias</h5><span class="pos">[Nombre H∴]</span></div>
+      <div class="officer"><div class="officer-avatar">vi</div><h5>Gran Experto</h5><span class="pos">[Nombre H∴]</span></div>
+      <div class="officer"><div class="officer-avatar">vii</div><h5>Gran Guarda Templos</h5><span class="pos">[Nombre H∴]</span></div>
+      <div class="officer"><div class="officer-avatar">viii</div><h5>Gran Bibliotecario</h5><span class="pos">[Nombre H∴]</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section section-ink">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="chapter-mark"><span class="num">iii.</span><span class="line"></span><span class="label">Linaje</span></div>
+        <h2>Histórico de <em>Grandes Maestros</em></h2>
+      </div>
+      <p class="lede">43 Grandes Maestros han presidido la Gran Logia Simbólica del Paraguay desde Zerakhial en 1869 hasta el actual Ser∴ Gran Maestro Carlos Sosa Jovellanos.</p>
+    </div>
+    <div style="text-align:center;margin-top:30px">
+      <a href="grandes-maestros.html" class="btn-primary">Ver el listado completo <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="footer"><div class="wrap"><div class="footer-top"><div class="footer-brand"><img src="glsp_assets/logo-footer.png" alt="" class="seal"><h3>Gran Logia Simbólica<br>del Paraguay</h3><div class="org-meta">Fundada en 1923</div><p>La obediencia masónica regular del Paraguay.</p></div><div><h4>Secciones</h4><ul><li><a href="gran-logia.html">Gran Logia</a></li><li><a href="historia.html">Historia</a></li><li><a href="noticias.html">Noticias</a></li><li><a href="centro-cultural.html">Centro Cultural</a></li><li><a href="masoneria.html">Masonería</a></li><li><a href="filantropia.html">Filantropía</a></li></ul></div><div class="footer-contact"><h4>Contacto</h4><span class="label">Dirección</span><p>Luís Alberto de Herrera Nº 1071<br>c/ Brasil — Asunción, Paraguay</p><span class="label">Correo</span><p>secejecutiva@glsp.org.py</p></div><div><h4>Síguenos</h4><p style="font-family:Lora,serif;font-style:italic;color:var(--gold)">@GranLogiaSimbolicaPy</p><div class="social-row"><a href="#"><i class="fab fa-facebook-f"></i></a><a href="#"><i class="fab fa-instagram"></i></a><a href="#"><i class="fab fa-x-twitter"></i></a><a href="#"><i class="fab fa-tiktok"></i></a></div></div></div><div class="footer-bottom"><div>© <span data-year>2026</span> Gran Logia Simbólica del Paraguay</div><div>Diseño & desarrollo <em>Mister Co.</em></div></div></div></footer>
+
+<button class="back-top" id="backTop"><i class="fas fa-arrow-up"></i></button>
+<script src="assets/site.js"></script>
+<script src="assets/i18n.js"></script>
+</body>
+</html>

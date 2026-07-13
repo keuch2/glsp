@@ -1,0 +1,12 @@
+Options -Indexes
+
+RewriteEngine On
+
+# Clean URLs for news articles: /noticias/slug → noticias/article.php?slug=slug
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^noticias/([^/]+)/?$ noticias/article.php?slug=$1 [L,QSA]
+
+# Redirect old .html to .php (permanent)
+RewriteCond %{THE_REQUEST} \.html[\s?] [NC]
+RewriteRule ^(.+)\.html$ %{REQUEST_URI}/../$1.php [R=301,L]

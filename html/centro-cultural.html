@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Centro Cultural Masónico · Gran Logia Simbólica del Paraguay</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+/* Próximamente features */
+.cs-features{display:grid;grid-template-columns:1fr 1fr;gap:40px}
+.cs-feature{padding:50px 44px;background:#fff;border:1px solid var(--rule);position:relative;transition:all .35s;overflow:hidden}
+.cs-feature::before{content:'';position:absolute;top:0;left:0;width:0;height:3px;background:var(--gold);transition:width .5s}
+.cs-feature:hover{transform:translateY(-6px);box-shadow:0 18px 40px rgba(14,15,26,.08);border-color:var(--gold)}
+.cs-feature:hover::before{width:100%}
+.cs-feature-icon{width:64px;height:64px;border:1px solid var(--gold);display:flex;align-items:center;justify-content:center;color:var(--gold-deep);font-size:1.6rem;margin-bottom:28px}
+.cs-feature-tag{position:absolute;top:30px;right:30px;font-size:.62rem;letter-spacing:.32em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;padding:6px 12px;border:1px solid var(--gold);background:rgba(201,164,73,.06)}
+.cs-feature h3{font-family:'Lora',serif;font-weight:500;font-size:1.6rem;margin-bottom:16px;letter-spacing:-.005em}
+.cs-feature p{font-family:'Lora',serif;font-size:1.02rem;line-height:1.7;color:#3a3b48;margin-bottom:20px}
+.cs-feature-meta{font-family:'Lora',serif;font-style:italic;font-size:.88rem;color:var(--text-mute);padding-top:18px;border-top:1px solid var(--rule-light);margin-top:14px}
+.cs-feature-link{display:inline-flex;align-items:center;gap:12px;margin-top:20px;font-size:.72rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;padding-bottom:6px;border-bottom:1px solid var(--gold);transition:gap .25s}
+.cs-feature-link:hover{gap:18px}
+@media(max-width:880px){.cs-features{grid-template-columns:1fr}}
+
+/* Centro Cultural specific */
+.cc-tabs{display:flex;gap:0;flex-wrap:wrap;position:sticky;top:110px;z-index:30;background:var(--ink);margin:0 -40px 80px;padding:0 40px;box-shadow:0 14px 30px rgba(14,15,26,.18);border-bottom:1px solid rgba(201,164,73,.25)}
+.cc-tab{padding:22px 28px;font-family:'Lora',serif;font-size:1.02rem;color:rgba(255,255,255,.6);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .25s;display:inline-flex;align-items:center;gap:12px;background:none;border-left:none;border-right:none;border-top:none;text-decoration:none}
+.cc-tab i{color:var(--gold)}
+.cc-tab:hover{color:#fff}
+.cc-tab.active{color:#fff;border-bottom-color:var(--gold);font-weight:500;background:rgba(201,164,73,.06)}
+
+.cc-pane{display:none}
+.cc-pane.active{display:block;animation:fadeIn .5s ease}
+@keyframes fadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+
+/* Museo gallery */
+.museo-hero{position:relative;height:480px;overflow:hidden;margin-bottom:80px;background:#222}
+.museo-hero img{width:100%;height:100%;object-fit:cover}
+.museo-hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,15,26,.2) 0%,rgba(14,15,26,.85) 100%);display:flex;align-items:flex-end;padding:50px}
+.museo-hero-info{color:#fff;max-width:600px}
+.museo-hero-info .virtual-badge{display:inline-flex;align-items:center;gap:10px;padding:10px 18px;background:var(--gold);color:var(--ink);font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;font-weight:600;margin-bottom:20px}
+.museo-hero-info h3{font-family:'Lora',serif;font-weight:500;font-size:2.4rem;margin-bottom:14px}
+.museo-hero-info p{font-family:'Lora',serif;font-size:1.05rem;line-height:1.65;color:rgba(255,255,255,.85);margin-bottom:24px}
+
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);gap:14px;margin-bottom:80px}
+.gallery-item{position:relative;overflow:hidden;cursor:pointer;background:#222}
+.gallery-item:nth-child(1){grid-column:span 8;aspect-ratio:16/10}
+.gallery-item:nth-child(2){grid-column:span 4;aspect-ratio:4/5}
+.gallery-item:nth-child(3){grid-column:span 4;aspect-ratio:1/1}
+.gallery-item:nth-child(4){grid-column:span 4;aspect-ratio:1/1}
+.gallery-item:nth-child(5){grid-column:span 4;aspect-ratio:1/1}
+.gallery-item:nth-child(6){grid-column:span 6;aspect-ratio:3/2}
+.gallery-item:nth-child(7){grid-column:span 6;aspect-ratio:3/2}
+.gallery-item img{width:100%;height:100%;object-fit:cover;transition:transform .8s}
+.gallery-item:hover img{transform:scale(1.06)}
+.gallery-item-meta{position:absolute;left:0;right:0;bottom:0;padding:24px;background:linear-gradient(180deg,transparent,rgba(14,15,26,.85));color:#fff;transform:translateY(20px);opacity:0;transition:all .3s}
+.gallery-item:hover .gallery-item-meta{transform:translateY(0);opacity:1}
+.gallery-item-meta .num{font-family:'Lora',serif;font-style:italic;color:var(--gold);font-size:.85rem;margin-bottom:6px;display:block}
+.gallery-item-meta .name{font-family:'Lora',serif;font-size:1.1rem;font-weight:500}
+.gallery-item-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#1f2034 0%,#0e0f1a 100%);color:var(--gold);font-family:'Lora',serif;font-style:italic;font-size:.9rem;flex-direction:column;gap:14px}
+.gallery-item-placeholder i{font-size:2.4rem;opacity:.6}
+
+/* Lightbox */
+.lightbox{position:fixed;inset:0;background:rgba(14,15,26,.96);z-index:1000;display:none;align-items:center;justify-content:center;padding:40px}
+.lightbox.open{display:flex;animation:fadeIn .3s}
+.lightbox-content{max-width:1100px;width:100%;position:relative}
+.lightbox-img{aspect-ratio:16/10;background:#222;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.5);font-family:'Lora',serif;font-style:italic}
+.lightbox-img img{width:100%;height:100%;object-fit:cover}
+.lightbox-meta{margin-top:24px;color:#fff;display:flex;justify-content:space-between;align-items:flex-start;gap:30px;flex-wrap:wrap}
+.lightbox-meta h4{font-family:'Lora',serif;font-weight:500;font-size:1.5rem;color:#fff}
+.lightbox-meta p{color:rgba(255,255,255,.7);font-family:'Lora',serif;margin-top:8px;max-width:600px}
+.lightbox-meta .info{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:600}
+.lightbox-close{position:absolute;top:-50px;right:0;width:44px;height:44px;background:transparent;border:1px solid rgba(255,255,255,.3);color:#fff;font-size:1.4rem;cursor:pointer}
+.lightbox-close:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.lightbox-nav{position:absolute;top:50%;transform:translateY(-50%);width:50px;height:50px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.2);color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lightbox-nav:hover{background:var(--gold);border-color:var(--gold);color:var(--ink)}
+.lightbox-prev{left:-70px}
+.lightbox-next{right:-70px}
+
+/* Virtual tour mock */
+.virtual-tour{padding:60px;background:var(--ink);color:#fff;position:relative;overflow:hidden;margin-bottom:80px}
+.virtual-tour::before{content:'';position:absolute;inset:0;background:url('glsp_assets/masoneria-slide02.jpg') center/cover;opacity:.18}
+.virtual-tour::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(14,15,26,.85),rgba(14,15,26,.5))}
+.virtual-tour-inner{position:relative;z-index:1;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.virtual-tour h3{font-family:'Lora',serif;font-weight:500;font-size:2.2rem;margin-bottom:20px}
+.virtual-tour p{font-family:'Lora',serif;font-size:1.05rem;line-height:1.7;color:rgba(255,255,255,.8);margin-bottom:30px}
+.tour-screen{aspect-ratio:16/10;background:rgba(0,0,0,.5);border:1px solid rgba(201,164,73,.3);position:relative;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:border-color .3s}
+.tour-screen:hover{border-color:var(--gold)}
+.tour-play{width:80px;height:80px;border:2px solid var(--gold);background:rgba(201,164,73,.15);border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1.4rem;backdrop-filter:blur(6px)}
+.tour-screen img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.5}
+.tour-rooms{position:absolute;top:20px;left:20px;display:flex;gap:8px;z-index:2}
+.tour-rooms .room{padding:6px 12px;background:rgba(14,15,26,.7);border:1px solid rgba(201,164,73,.4);font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:600}
+
+/* Archive search */
+.archive-search{padding:50px;background:var(--paper);border:1px solid var(--rule);margin-bottom:50px}
+.archive-search-bar{display:grid;grid-template-columns:1fr auto auto;gap:14px;margin-bottom:30px}
+.archive-input{padding:18px 22px;border:1px solid rgba(14,15,26,.15);font-family:'Lora',serif;font-size:1.05rem;background:#fff}
+.archive-input:focus{outline:none;border-color:var(--gold)}
+.archive-select{padding:18px 22px;border:1px solid rgba(14,15,26,.15);font-family:'Lora',serif;font-size:1rem;background:#fff;cursor:pointer}
+.archive-results{margin-top:30px}
+.archive-row{display:grid;grid-template-columns:120px 1fr 100px auto;gap:20px;padding:18px 0;border-bottom:1px solid var(--rule-light);align-items:center;cursor:pointer;transition:padding .25s}
+.archive-row:hover{padding-left:14px;background:rgba(201,164,73,.04)}
+.archive-row .ar-year{font-family:'Lora',serif;font-style:italic;font-size:1.4rem;color:var(--gold-deep)}
+.archive-row .ar-title{font-family:'Lora',serif;font-size:1.05rem;color:var(--ink)}
+.archive-row .ar-type{font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+.archive-row .ar-arrow{color:var(--text-mute)}
+
+/* Templos */
+.templos-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-bottom:60px}
+.templo-card{position:relative;cursor:pointer}
+.templo-img{aspect-ratio:4/5;overflow:hidden;background:#222;margin-bottom:18px}
+.templo-img img{width:100%;height:100%;object-fit:cover;transition:transform 1s}
+.templo-card:hover .templo-img img{transform:scale(1.05)}
+.templo-card h4{font-family:'Lora',serif;font-weight:500;font-size:1.3rem;margin-bottom:6px}
+.templo-card .templo-loc{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600}
+
+/* Eventos / agenda */
+.agenda-list{margin-bottom:50px}
+.agenda-item{display:grid;grid-template-columns:120px 1fr auto;gap:30px;padding:30px 0;border-bottom:1px solid var(--rule-light);align-items:center}
+.agenda-date{text-align:center;border-right:1px solid var(--rule);padding-right:30px}
+.agenda-date .day{font-family:'Lora',serif;font-size:2.6rem;font-weight:500;line-height:1;color:var(--ink)}
+.agenda-date .mo{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-top:6px}
+.agenda-info h4{font-family:'Lora',serif;font-weight:500;font-size:1.3rem;margin-bottom:6px}
+.agenda-info .meta{font-size:.85rem;color:var(--text-mute);font-family:'Lora',serif;font-style:italic}
+.agenda-info .meta i{color:var(--gold-deep);margin-right:6px}
+
+/* Publicaciones */
+.pubs-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:30px}
+.pub-card{cursor:pointer}
+.pub-cover{aspect-ratio:3/4;background:linear-gradient(135deg,#1f2034 0%,#0e0f1a 100%);position:relative;display:flex;align-items:center;justify-content:center;margin-bottom:18px;overflow:hidden}
+.pub-cover::after{content:'';position:absolute;left:0;top:10%;bottom:10%;width:6px;background:linear-gradient(90deg,rgba(201,164,73,.5),transparent)}
+.pub-cover-text{text-align:center;color:var(--gold);padding:20px}
+.pub-cover-text .title{font-family:'Lora',serif;font-weight:500;font-size:.95rem;line-height:1.3;margin-bottom:14px}
+.pub-cover-text .ornament{font-style:italic;font-size:.78rem;opacity:.7}
+.pub-card h5{font-family:'Lora',serif;font-weight:500;font-size:1rem;line-height:1.35;margin-bottom:6px}
+.pub-card .pub-meta{font-size:.78rem;color:var(--text-mute);font-family:'Lora',serif;font-style:italic}
+
+@media(max-width:980px){
+  .gallery{grid-template-columns:repeat(6,1fr)}
+  .gallery-item:nth-child(n){grid-column:span 6;aspect-ratio:16/10}
+  .virtual-tour-inner,.archive-search-bar{grid-template-columns:1fr}
+  .templos-grid{grid-template-columns:repeat(2,1fr);gap:20px}
+  .pubs-grid{grid-template-columns:repeat(2,1fr)}
+  .agenda-item{grid-template-columns:90px 1fr;gap:20px}
+  .agenda-item>:last-child{grid-column:1/-1}
+  .lightbox-prev{left:10px}.lightbox-next{right:10px}
+  .cc-tabs{position:relative;top:0;margin-left:-24px;margin-right:-24px;padding:0 8px}
+  .cc-tab{padding:16px 16px;font-size:.92rem}
+}
+</style>
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left"><span><span class="dot"></span> Asunción · Paraguay</span><span class="utility-meta"><em>Año Masónico</em> 2026 · A∴L∴ 6026</span></div>
+    <div class="utility-right">
+      <div class="lang"><span class="active">ES</span><span>EN</span><span>PT</span></div>
+      <a class="member-link" href="miembros.html"><i class="fas fa-key"></i> Área de Hermanos</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead" id="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="wordmark"><img src="glsp_assets/logo_glsp2026.png" alt="GLSP" class="wordmark-seal"></a>
+    <nav class="primary-nav">
+      <div class="nav-item has-sub">Gran Logia
+        <div class="submenu">
+          <a href="gran-logia.html#mensaje"><span class="num">i</span> Mensaje del Gran Maestro</a>
+          <a href="noticias.html"><span class="num">ii</span> Actualidad</a>
+          <a href="gran-logia.html#gran-cuadro"><span class="num">iii</span> Gran Cuadro</a>
+          <a href="grandes-maestros.html"><span class="num">iv</span> Histórico de Grandes Maestros</a>
+        </div>
+      </div>
+      <a class="nav-item" href="historia.html">Historia</a>
+      <a class="nav-item" href="noticias.html">Noticias</a>
+      <a class="nav-item active" href="centro-cultural.html">Centro Cultural</a>
+      <a class="nav-item" href="https://glsp.org.py/eventos" target="_blank" rel="noopener">Eventos<i class="fas fa-arrow-up-right-from-square nav-ext"></i></a>
+      <a class="nav-item" href="filantropia.html">Filantropía</a>
+      <a class="nav-item" href="masoneria.html">Masonería</a>
+      <a class="nav-item" href="contacto.html">Contacto</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <button class="mobile-close" id="mobileClose">&times;</button>
+  <a href="gran-logia.html"><span class="num">01</span> Gran Logia</a>
+  <a href="historia.html"><span class="num">02</span> Historia</a>
+  <a href="noticias.html"><span class="num">03</span> Noticias</a>
+  <a href="centro-cultural.html"><span class="num">04</span> Centro Cultural</a>
+  <a href="https://glsp.org.py/eventos" target="_blank" rel="noopener"><span class="num">05</span> Eventos</a>
+  <a href="masoneria.html"><span class="num">06</span> Masonería</a>
+  <a href="filantropia.html"><span class="num">07</span> Filantropía</a>
+  <a href="articulos.html"><span class="num">08</span> Artículos</a>
+  <a href="grandes-maestros.html"><span class="num">09</span> Grandes Maestros</a>
+  <a href="miembros.html"><span class="num">10</span> Área de Hermanos</a>
+  <a href="contacto.html"><span class="num">11</span> Contacto</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('templos/palma-asuncion/cover.jpg')"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Inicio</a><span class="sep">/</span><span>Centro Cultural</span></div>
+    <div class="page-chapter"><span class="num">Nº 04</span><span class="line"></span><span class="label">Patrimonio</span></div>
+    <h1>Centro Cultural <em>Masónico</em></h1>
+    <p class="lede">Conservar, exhibir y abrir al público el patrimonio histórico, documental y arquitectónico de la Masonería paraguaya — un siglo y medio de objetos, documentos y memoria reunidos en un solo espacio.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <!-- Tabs interactivos -->
+    <div class="cc-tabs reveal" role="tablist">
+      <button class="cc-tab active" data-pane="museo"><i class="fas fa-landmark"></i> Museo</button>
+      <button class="cc-tab" data-pane="archivo"><i class="fas fa-book"></i> Gran Archivo</button>
+      <button class="cc-tab" data-pane="templos"><i class="fas fa-torii-gate"></i> Templos</button>
+      <a class="cc-tab" href="https://glsp.org.py/eventos" target="_blank" rel="noopener"><i class="fas fa-masks-theater"></i> Eventos <i class="fas fa-arrow-up-right-from-square" style="font-size:.7rem;opacity:.5;margin-left:4px"></i></a>
+    </div>
+
+    <!-- MUSEO -->
+    <div class="cc-pane active" id="pane-museo">
+      <div class="museo-hero">
+        <img src="glsp_assets/masoneria-slide03.jpg" alt="Museo Masónico del Paraguay">
+        <div class="museo-hero-overlay">
+          <div class="museo-hero-info">
+            <span class="virtual-badge" style="background:var(--gold);color:var(--ink)">El museo masónico más completo del Paraguay</span>
+            <h3>Museo de la Francmasonería Paraguaya</h3>
+            <p>Situado en la sede del Gran Oriente del Paraguay — calle Luís Alberto de Herrera Nº 1071 c/ Brasil, Asunción — el Museo conserva la colección más extensa y completa del país sobre la tradición masónica paraguaya.</p>
+          </div>
+        </div>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1.2fr;gap:80px;align-items:center;margin-bottom:80px">
+        <div class="reveal">
+          <div class="chapter-mark"><span class="num">i.</span><span class="line"></span><span class="label">Sobre el museo</span></div>
+          <h2 style="font-family:'Lora',serif;font-weight:500;font-size:clamp(1.8rem,2.8vw,2.4rem);margin-bottom:24px;letter-spacing:-.01em">Un siglo y medio <em style="font-style:italic;color:var(--gold-deep)">de memoria viva</em></h2>
+          <p style="font-family:'Lora',serif;font-size:1.08rem;line-height:1.8;color:#2a2b35;margin-bottom:18px">El Museo de la Francmasonería Paraguaya reúne objetos rituales, mobiliario, regalia, obras de arte, fotografías y documentos que abarcan desde la fundación de la Logia Fe en 1869 hasta nuestros días.</p>
+          <p style="font-family:'Lora',serif;font-size:1.08rem;line-height:1.8;color:#2a2b35;margin-bottom:18px">Cada vitrina, cada sala, cada pieza expuesta narra un capítulo de la historia masónica del país — un patrimonio único que combina valor histórico, artístico y simbólico.</p>
+          <p style="font-family:'Lora',serif;font-size:1.08rem;line-height:1.8;color:#2a2b35">El Museo está abierto a visitas guiadas con cita previa, tanto para hermanos como para el público no iniciado interesado en conocer este patrimonio cultural paraguayo.</p>
+        </div>
+        <div class="reveal">
+          <img src="glsp_assets/masoneria-slide02.jpg" alt="" style="width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--rule)">
+        </div>
+      </div>
+
+      <div class="chapter-mark reveal"><span class="num">ii.</span><span class="line"></span><span class="label">Galería de fotos</span></div>
+      <h2 class="reveal" style="font-family:'Lora',serif;font-weight:500;font-size:2.2rem;margin-bottom:50px;letter-spacing:-.01em">Recorrido <em style="color:var(--gold-deep)">visual</em></h2>
+
+      <div class="gallery reveal">
+        <div class="gallery-item" data-title="Sala principal del Museo" data-desc="Vista panorámica de la sala central del Museo Masónico, con las vitrinas de regalia y documentos fundacionales." data-info="Sala central">
+          <img src="glsp_assets/masoneria-slide01.jpg" alt="">
+          <div class="gallery-item-meta"><span class="num">— I.</span><span class="name">Sala principal</span></div>
+        </div>
+        <div class="gallery-item" data-title="Vitrina histórica" data-desc="Mobiliario ritual y mandiles ceremoniales pertenecientes a los primeros Grandes Maestros." data-info="Vitrina · siglo XX">
+          <div class="gallery-item-placeholder"><i class="fas fa-image"></i><span>Foto del museo</span></div>
+          <div class="gallery-item-meta"><span class="num">— II.</span><span class="name">Vitrina histórica</span></div>
+        </div>
+        <div class="gallery-item" data-title="Sala de los símbolos" data-desc="Espacio dedicado a los elementos simbólicos de la tradición masónica — compás, escuadra, plomada y nivel." data-info="Sala temática">
+          <div class="gallery-item-placeholder"><i class="fas fa-compass-drafting"></i><span>Sala de símbolos</span></div>
+          <div class="gallery-item-meta"><span class="num">— III.</span><span class="name">Sala de los símbolos</span></div>
+        </div>
+        <div class="gallery-item" data-title="Documentos fundacionales" data-desc="Actas, cartas patentes y sellos institucionales originales conservados desde 1869." data-info="Archivo expuesto">
+          <div class="gallery-item-placeholder"><i class="fas fa-scroll"></i><span>Documentos</span></div>
+          <div class="gallery-item-meta"><span class="num">— IV.</span><span class="name">Documentos fundacionales</span></div>
+        </div>
+        <div class="gallery-item" data-title="Biblioteca histórica" data-desc="Miles de volúmenes sobre simbolismo, filosofía masónica e historia paraguaya." data-info="Biblioteca">
+          <img src="glsp_assets/masoneria-slide02.jpg" alt="">
+          <div class="gallery-item-meta"><span class="num">— V.</span><span class="name">Biblioteca histórica</span></div>
+        </div>
+        <div class="gallery-item" data-title="Galería de retratos" data-desc="Retratos de los 43 Grandes Maestros que han presidido la Gran Logia Simbólica del Paraguay." data-info="Galería">
+          <img src="glsp_assets/hero-slide02.jpg" alt="">
+          <div class="gallery-item-meta"><span class="num">— VI.</span><span class="name">Galería de retratos</span></div>
+        </div>
+        <div class="gallery-item" data-title="Detalle arquitectónico" data-desc="Detalle de la ornamentación interior del museo, con elementos simbólicos masónicos integrados al diseño arquitectónico." data-info="Arquitectura">
+          <img src="glsp_assets/hero-slide03.jpg" alt="">
+          <div class="gallery-item-meta"><span class="num">— VII.</span><span class="name">Detalle arquitectónico</span></div>
+        </div>
+      </div>
+
+      <div style="text-align:center;margin-top:40px" class="reveal">
+        <a href="contacto.html" class="btn-primary">Agendar una visita guiada <i class="fas fa-arrow-right"></i></a>
+      </div>
+    </div>
+
+    <!-- GRAN ARCHIVO -->
+    <div class="cc-pane" id="pane-archivo">
+      <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:80px;align-items:center;margin-bottom:80px">
+        <div class="reveal">
+          <div class="chapter-mark"><span class="num">i.</span><span class="line"></span><span class="label">Parte del Centro Cultural</span></div>
+          <h2 style="font-family:'Lora',serif;font-weight:500;font-size:clamp(2rem,3.2vw,2.8rem);margin-bottom:28px;letter-spacing:-.01em">El Gran <em style="font-style:italic;color:var(--gold-deep)">Archivo</em></h2>
+          <p style="font-family:'Lora',serif;font-size:1.08rem;line-height:1.85;color:#2a2b35;margin-bottom:20px">El Gran Archivo es uno de los pilares del Centro Cultural Masónico. Custodia miles de textos, documentos y objetos que forman parte de la historia de la masonería paraguaya — desde las primeras actas del siglo XIX hasta el material institucional contemporáneo.</p>
+          <p style="font-family:'Lora',serif;font-size:1.08rem;line-height:1.85;color:#2a2b35;margin-bottom:20px">Entre sus fondos se conservan cartas patentes, balaustres originales, correspondencia diplomática con obediencias del mundo entero, fotografías históricas, libros antiguos, sellos institucionales, mobiliario ritual y objetos personales de los Grandes Maestros que precedieron al actual.</p>
+          <p style="font-family:'Lora',serif;font-size:1.08rem;line-height:1.85;color:#2a2b35">Es, en esencia, la memoria documental de un siglo y medio de masonería en suelo paraguayo — un patrimonio que se preserva, se cataloga y se pone a disposición de la investigación histórica.</p>
+        </div>
+        <div class="reveal">
+          <img src="glsp_assets/masoneria-slide01.jpg" alt="Gran Archivo" style="width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--rule)">
+        </div>
+      </div>
+
+      <div class="chapter-mark reveal"><span class="num">ii.</span><span class="line"></span><span class="label">El acervo en imágenes</span></div>
+      <h2 class="reveal" style="font-family:'Lora',serif;font-weight:500;font-size:2rem;margin-bottom:50px;letter-spacing:-.01em">Documentos, libros <em style="color:var(--gold-deep);font-style:italic">y objetos</em></h2>
+
+      <div class="gallery reveal" style="margin-bottom:60px">
+        <div class="gallery-item" data-title="Actas históricas" data-desc="Volúmenes encuadernados con las actas originales de las primeras logias paraguayas." data-info="Documentación · siglo XIX">
+          <div class="gallery-item-placeholder"><i class="fas fa-scroll"></i><span>Actas históricas</span></div>
+          <div class="gallery-item-meta"><span class="num">— I.</span><span class="name">Actas históricas</span></div>
+        </div>
+        <div class="gallery-item" data-title="Biblioteca masónica" data-desc="Miles de volúmenes sobre filosofía, simbolismo, ritual e historia masónica universal y paraguaya." data-info="Biblioteca">
+          <img src="glsp_assets/masoneria-slide02.jpg" alt="">
+          <div class="gallery-item-meta"><span class="num">— II.</span><span class="name">Biblioteca masónica</span></div>
+        </div>
+        <div class="gallery-item" data-title="Cartas patentes" data-desc="Cartas patentes de las logias del Paraguay y de las obediencias internacionales que reconocen a la GLSP." data-info="Documentos oficiales">
+          <div class="gallery-item-placeholder"><i class="fas fa-stamp"></i><span>Cartas patentes</span></div>
+          <div class="gallery-item-meta"><span class="num">— III.</span><span class="name">Cartas patentes</span></div>
+        </div>
+        <div class="gallery-item" data-title="Fotografías históricas" data-desc="Archivo fotográfico que documenta tenidas, ceremonias y figuras de la masonería paraguaya desde fines del siglo XIX." data-info="Archivo fotográfico">
+          <img src="glsp_assets/hero-slide02.jpg" alt="">
+          <div class="gallery-item-meta"><span class="num">— IV.</span><span class="name">Fotografías históricas</span></div>
+        </div>
+        <div class="gallery-item" data-title="Objetos rituales" data-desc="Mandiles ceremoniales, joyas masónicas y mobiliario ritual de las primeras logias paraguayas." data-info="Objetos rituales">
+          <div class="gallery-item-placeholder"><i class="fas fa-gem"></i><span>Objetos rituales</span></div>
+          <div class="gallery-item-meta"><span class="num">— V.</span><span class="name">Objetos rituales</span></div>
+        </div>
+        <div class="gallery-item" data-title="Correspondencia diplomática" data-desc="Correspondencia oficial con la Gran Logia Unida de Inglaterra, la Confederación Masónica Interamericana y otras obediencias del mundo." data-info="Correspondencia">
+          <div class="gallery-item-placeholder"><i class="fas fa-envelope-open-text"></i><span>Correspondencia</span></div>
+          <div class="gallery-item-meta"><span class="num">— VI.</span><span class="name">Correspondencia</span></div>
+        </div>
+        <div class="gallery-item" data-title="Sellos institucionales" data-desc="Sellos del Gran Oriente del Paraguay y de la Gran Logia Simbólica desde sus respectivas constituciones." data-info="Heráldica institucional">
+          <img src="glsp_assets/hero-slide03.jpg" alt="">
+          <div class="gallery-item-meta"><span class="num">— VII.</span><span class="name">Sellos institucionales</span></div>
+        </div>
+      </div>
+
+      <p style="font-family:'Lora',serif;font-style:italic;font-size:1.05rem;line-height:1.7;color:var(--text-mute);max-width:780px;border-left:2px solid var(--gold);padding-left:24px">El Gran Archivo se conserva en condiciones de archivo histórico y está abierto a investigadores con autorización previa de la Secretaría Ejecutiva.</p>
+    </div>
+
+    <!-- TEMPLOS -->
+    <div class="cc-pane" id="pane-templos">
+      <div style="max-width:780px;margin-bottom:60px">
+        <h2 style="font-family:'Lora',serif;font-weight:500;font-size:2.4rem;margin-bottom:24px;letter-spacing:-.01em">28 Templos <em style="font-style:italic;color:var(--gold-deep)">en territorio paraguayo</em></h2>
+        <p style="font-family:'Lora',serif;font-size:1.15rem;line-height:1.7;color:var(--text-mute)">Patrimonio arquitectónico masónico de Paraguay — desde el histórico Templo de Palma de 1899 hasta los talleres contemporáneos.</p>
+      </div>
+
+      <div class="templos-grid">
+        <article class="templo-card"><div class="templo-img"><img src="templos/palma-asuncion/cover.jpg" alt=""></div><h4>Templo Histórico de Palma</h4><span class="templo-loc">Asunción · 1899</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/solar-genesis-asuncion/cover.jpg" alt=""></div><h4>Solar Génesis</h4><span class="templo-loc">Asunción</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/solar-aurora-asuncion/cover.jpg" alt=""></div><h4>Templo José Félix Bogado · Solar Aurora</h4><span class="templo-loc">Asunción</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/solar-aurora-asuncion-2/cover.jpg" alt=""></div><h4>Solar Aurora</h4><span class="templo-loc">Asunción</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/solar-herrera-asuncion/cover.jpg" alt=""></div><h4>Solar Herrera</h4><span class="templo-loc">Asunción</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/ernesto-reinecke-encarnacion/cover.jpg" alt=""></div><h4>Templo Ernesto Reinecke</h4><span class="templo-loc">Encarnación · Itapúa</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/villarrica/cover.jpg" alt=""></div><h4>Templo de Villarrica</h4><span class="templo-loc">Guairá</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/concepcion/cover.jpg" alt=""></div><h4>Templo de Concepción</h4><span class="templo-loc">Concepción</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/solar-luz-y-progreso-san-lorenzo/cover.jpg" alt=""></div><h4>Solar Luz y Progreso</h4><span class="templo-loc">San Lorenzo</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/km-4-ciudad-del-este/cover.jpg" alt=""></div><h4>Templo Km. 4</h4><span class="templo-loc">Ciudad del Este · Alto Paraná</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/km-7-ciudad-del-este/cover.jpg" alt=""></div><h4>Templo Km. 7</h4><span class="templo-loc">Ciudad del Este · Alto Paraná</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/km-13-ciudad-del-este/cover.jpg" alt=""></div><h4>Templo Km. 13</h4><span class="templo-loc">Ciudad del Este · Alto Paraná</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/km-14-minga-guazu/cover.jpg" alt=""></div><h4>Templo Km. 14</h4><span class="templo-loc">Minga Guazú · Alto Paraná</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/solar-primero-de-marzo-presidente-franco/cover.jpg" alt=""></div><h4>Solar Primero de Marzo</h4><span class="templo-loc">Presidente Franco · Alto Paraná</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/pedro-juan-caballero-1/cover.jpg" alt=""></div><h4>Templo PJC I</h4><span class="templo-loc">Pedro Juan Caballero · Amambay</span></article>
+        <article class="templo-card"><div class="templo-img"><img src="templos/pedro-juan-caballero-2/cover.jpg" alt=""></div><h4>Templo PJC II</h4><span class="templo-loc">Pedro Juan Caballero · Amambay</span></article>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Próximamente highlights (después del contenido principal) -->
+<section class="section section-paper">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="chapter-mark"><span class="num">—</span><span class="line"></span><span class="label">Próximamente</span></div>
+        <h2>Nuevas <em>experiencias culturales</em></h2>
+      </div>
+      <p class="lede">Dos proyectos en desarrollo que ampliarán la forma en que el público se relaciona con el patrimonio masónico paraguayo — uno desde tu casa, otro durante la visita al museo.</p>
+    </div>
+
+    <div class="cs-features reveal">
+      <article class="cs-feature">
+        <div class="cs-feature-icon"><i class="fas fa-vr-cardboard"></i></div>
+        <div class="cs-feature-tag">Próximamente</div>
+        <h3>Recorrido Virtual</h3>
+        <p>Recorré el Museo Masónico desde tu navegador. Una visita inmersiva en alta resolución para conocer las salas, vitrinas y piezas más destacadas sin moverte de tu casa.</p>
+        <div class="cs-feature-meta">En desarrollo · 360° · Compatible con visores VR</div>
+      </article>
+      <article class="cs-feature">
+        <div class="cs-feature-icon"><i class="fas fa-headphones"></i></div>
+        <div class="cs-feature-tag">Próximamente</div>
+        <h3>Tour Autoguiado al Museo</h3>
+        <p>Una playlist de audio diseñada para acompañar al visitante presencial del Museo de la Masonería. Cada sala, vitrina y objeto contará con su propia explicación narrada.</p>
+        <div class="cs-feature-meta">Acceso vía código QR en el museo · Reproducción gratuita</div>
+        <a href="tour-autoguiado.html" class="cs-feature-link">Ver vista previa <i class="fas fa-arrow-right"></i></a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- Lightbox -->
+<div class="lightbox" id="lightbox">
+  <div class="lightbox-content">
+    <button class="lightbox-close" id="lbClose">&times;</button>
+    <button class="lightbox-nav lightbox-prev" id="lbPrev"><i class="fas fa-chevron-left"></i></button>
+    <button class="lightbox-nav lightbox-next" id="lbNext"><i class="fas fa-chevron-right"></i></button>
+    <div class="lightbox-img" id="lbImg">[ Imagen del objeto ]</div>
+    <div class="lightbox-meta">
+      <div>
+        <span class="info" id="lbInfo">Información</span>
+        <h4 id="lbTitle">Título</h4>
+        <p id="lbDesc">Descripción</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer" id="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="glsp_assets/logo-footer.png" alt="" class="seal">
+        <h3>Gran Logia Simbólica<br>del Paraguay</h3>
+        <div class="org-meta">Fundada en 1923</div>
+        <p>La obediencia masónica regular del Paraguay — origen y continuidad de la verdadera masonería paraguaya.</p>
+      </div>
+      <div>
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="gran-logia.html">Gran Logia</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="centro-cultural.html">Centro Cultural</a></li>
+          <li><a href="masoneria.html">Masonería</a></li>
+          <li><a href="filantropia.html">Filantropía</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <span class="label">Dirección</span><p>Luís Alberto de Herrera Nº 1071<br>c/ Brasil — Asunción, Paraguay</p>
+        <span class="label">Correo</span><p>secejecutiva@glsp.org.py</p>
+      </div>
+      <div>
+        <h4>Síguenos</h4>
+        <p style="font-family:Lora,serif;font-style:italic;color:var(--gold)">@GranLogiaSimbolicaPy</p>
+        <div class="social-row">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span data-year>2026</span> Gran Logia Simbólica del Paraguay</div>
+      <div>Diseño & desarrollo <em>Mister Co.</em></div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop"><i class="fas fa-arrow-up"></i></button>
+
+<script src="assets/site.js"></script>
+<script src="assets/i18n.js"></script>
+<script>
+// Tabs
+document.querySelectorAll('button.cc-tab').forEach(t=>{
+  t.addEventListener('click',()=>{
+    document.querySelectorAll('.cc-tab').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.cc-pane').forEach(x=>x.classList.remove('active'));
+    t.classList.add('active');
+    document.getElementById('pane-'+t.dataset.pane).classList.add('active');
+  });
+});
+// Lightbox
+const lb=document.getElementById('lightbox');
+const lbItems=document.querySelectorAll('.gallery-item');
+let lbIdx=0;
+function openLB(i){
+  const it=lbItems[i];
+  lbIdx=i;
+  document.getElementById('lbTitle').textContent=it.dataset.title;
+  document.getElementById('lbDesc').textContent=it.dataset.desc;
+  document.getElementById('lbInfo').textContent=it.dataset.info;
+  const im=it.querySelector('img');
+  document.getElementById('lbImg').innerHTML=im?'<img src="'+im.src+'" alt="">':'<span style="color:rgba(255,255,255,.4);font-family:Lora,serif;font-style:italic">[ Imagen del objeto del museo ]</span>';
+  lb.classList.add('open');
+}
+lbItems.forEach((it,i)=>it.addEventListener('click',()=>openLB(i)));
+document.getElementById('lbClose').addEventListener('click',()=>lb.classList.remove('open'));
+document.getElementById('lbPrev').addEventListener('click',()=>openLB((lbIdx-1+lbItems.length)%lbItems.length));
+document.getElementById('lbNext').addEventListener('click',()=>openLB((lbIdx+1)%lbItems.length));
+lb.addEventListener('click',e=>{if(e.target===lb)lb.classList.remove('open')});
+document.addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')lb.classList.remove('open');
+  if(e.key==='ArrowLeft')openLB((lbIdx-1+lbItems.length)%lbItems.length);
+  if(e.key==='ArrowRight')openLB((lbIdx+1)%lbItems.length);
+});
+</script>
+</body>
+</html>

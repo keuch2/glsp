@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Historia de la Masonería en Paraguay · GLSP</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.h-decades{display:flex;gap:0;border-bottom:1px solid var(--rule);margin-bottom:80px;flex-wrap:wrap;justify-content:center;position:sticky;top:110px;background:var(--bone);z-index:30;padding-top:14px}
+.h-decade{padding:18px 22px;font-family:'Lora',serif;font-style:italic;font-size:1rem;color:var(--text-mute);cursor:pointer;border-bottom:2px solid transparent;margin-bottom:-1px;transition:all .25s;background:none;border-left:none;border-right:none;border-top:none}
+.h-decade:hover{color:var(--ink)}
+.h-decade.active{color:var(--gold-deep);border-bottom-color:var(--gold);font-weight:500}
+
+.htl{position:relative;max-width:1080px;margin:0 auto;padding-left:60px}
+.htl::before{content:'';position:absolute;left:24px;top:0;bottom:0;width:1px;background:var(--rule)}
+.htl-event{position:relative;display:grid;grid-template-columns:1fr 1.2fr;gap:50px;align-items:start;padding-bottom:120px}
+.htl-event:nth-child(even){grid-template-columns:1.2fr 1fr}
+.htl-event:nth-child(even) .htl-img-wrap{order:2}
+.htl-event:nth-child(even) .htl-content{order:1}
+.htl-event::before{content:'';position:absolute;left:-44px;top:18px;width:14px;height:14px;border-radius:50%;background:var(--gold);border:3px solid var(--bone);box-shadow:0 0 0 1px var(--gold)}
+.htl-img-wrap{aspect-ratio:5/4;overflow:hidden;background:#1f2034;position:relative}
+.htl-img-wrap img{width:100%;height:100%;object-fit:cover}
+.htl-img-placeholder{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--gold);font-family:'Lora',serif;font-style:italic;font-size:.9rem;flex-direction:column;gap:14px}
+.htl-img-placeholder i{font-size:2.4rem;opacity:.5}
+.htl-content{padding-top:6px}
+.htl-year{font-family:'Lora',serif;font-weight:500;font-style:italic;font-size:3.4rem;line-height:1;color:var(--gold);margin-bottom:18px}
+.htl-date{font-size:.7rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold-deep);font-weight:600;margin-bottom:18px}
+.htl-content h3{font-family:'Lora',serif;font-weight:500;font-size:clamp(1.4rem,2.2vw,1.9rem);line-height:1.25;letter-spacing:-.005em;margin-bottom:22px}
+.htl-content p{font-family:'Lora',serif;font-size:1.02rem;line-height:1.75;color:#3a3b48;margin-bottom:18px;white-space:pre-line}
+.htl-content blockquote{font-family:'Lora',serif;font-style:italic;font-size:.96rem;line-height:1.7;color:var(--text-mute);padding-left:22px;border-left:2px solid var(--gold);margin:18px 0}
+
+/* Lodges section */
+.lodges-section{background:var(--ink);color:#e6e7ee;padding:120px 0}
+.lodges-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:50px}
+.lodges-decade h3{font-family:'Lora',serif;font-weight:500;font-style:italic;font-size:2rem;color:var(--gold);margin-bottom:30px}
+.lodges-decade ul{list-style:none}
+.lodges-decade li{display:grid;grid-template-columns:auto 1fr auto;gap:14px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.06);font-size:.92rem;font-family:'Lora',serif;align-items:baseline}
+.lodges-decade .l-num{color:var(--gold);font-style:italic;font-size:.85rem}
+.lodges-decade .l-name{color:#e6e7ee}
+.lodges-decade .l-loc{color:rgba(230,231,238,.5);font-size:.82rem;font-style:italic}
+
+.video-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;margin-top:80px}
+.video-card{position:relative}
+.video-frame{aspect-ratio:16/9;overflow:hidden;background:#000;border:1px solid rgba(201,164,73,.2);position:relative}
+.video-frame iframe{width:100%;height:100%;border:0;display:block}
+.video-card h4{font-family:'Lora',serif;font-weight:500;font-size:1.4rem;margin:24px 0 10px;letter-spacing:-.005em}
+.video-card p{font-size:.92rem;line-height:1.65;color:rgba(230,231,238,.7);font-family:'Lora',serif}
+.video-num{position:absolute;top:-30px;right:0;font-family:'Lora',serif;font-style:italic;color:var(--gold);font-size:.95rem}
+
+@media(max-width:880px){
+  .htl{padding-left:40px}
+  .htl::before{left:14px}
+  .htl-event,.htl-event:nth-child(even){grid-template-columns:1fr;gap:24px}
+  .htl-event:nth-child(even) .htl-img-wrap{order:0}
+  .htl-event:nth-child(even) .htl-content{order:0}
+  .htl-event::before{left:-30px}
+  .htl-year{font-size:2.6rem}
+  .lodges-grid{grid-template-columns:1fr;gap:30px}
+  .video-grid{grid-template-columns:1fr}
+  .h-decades{position:relative;top:0;font-size:.85rem}
+}
+</style>
+</head>
+<body>
+
+<div class="utility-bar">
+  <div class="utility-inner">
+    <div class="utility-left"><span><span class="dot"></span> Asunción · Paraguay</span><span class="utility-meta"><em>Año Masónico</em> 2026 · A∴L∴ 6026</span></div>
+    <div class="utility-right">
+      <div class="lang"><span class="active">ES</span><span>EN</span><span>PT</span></div>
+      <a class="member-link" href="miembros.html"><i class="fas fa-key"></i> Área de Hermanos</a>
+    </div>
+  </div>
+</div>
+
+<header class="masthead" id="masthead">
+  <div class="masthead-inner">
+    <a href="index.html" class="wordmark"><img src="glsp_assets/logo_glsp2026.png" alt="GLSP" class="wordmark-seal"></a>
+    <nav class="primary-nav">
+      <div class="nav-item has-sub">Gran Logia
+        <div class="submenu">
+          <a href="gran-logia.html#mensaje"><span class="num">i</span> Mensaje del Gran Maestro</a>
+          <a href="noticias.html"><span class="num">ii</span> Actualidad</a>
+          <a href="gran-logia.html#gran-cuadro"><span class="num">iii</span> Gran Cuadro</a>
+          <a href="grandes-maestros.html"><span class="num">iv</span> Histórico de Grandes Maestros</a>
+        </div>
+      </div>
+      <a class="nav-item active" href="historia.html">Historia</a>
+      <a class="nav-item" href="noticias.html">Noticias</a>
+      <a class="nav-item" href="centro-cultural.html">Centro Cultural</a>
+      <a class="nav-item" href="https://glsp.org.py/eventos" target="_blank" rel="noopener">Eventos<i class="fas fa-arrow-up-right-from-square nav-ext"></i></a>
+      <a class="nav-item" href="filantropia.html">Filantropía</a>
+      <a class="nav-item" href="masoneria.html">Masonería</a>
+      <a class="nav-item" href="contacto.html">Contacto</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <button class="mobile-close" id="mobileClose">&times;</button>
+  <a href="gran-logia.html"><span class="num">01</span> Gran Logia</a>
+  <a href="historia.html"><span class="num">02</span> Historia</a>
+  <a href="noticias.html"><span class="num">03</span> Noticias</a>
+  <a href="centro-cultural.html"><span class="num">04</span> Centro Cultural</a>
+  <a href="https://glsp.org.py/eventos" target="_blank" rel="noopener"><span class="num">05</span> Eventos</a>
+  <a href="masoneria.html"><span class="num">06</span> Masonería</a>
+  <a href="filantropia.html"><span class="num">07</span> Filantropía</a>
+  <a href="articulos.html"><span class="num">08</span> Artículos</a>
+  <a href="grandes-maestros.html"><span class="num">09</span> Grandes Maestros</a>
+  <a href="miembros.html"><span class="num">10</span> Área de Hermanos</a>
+  <a href="contacto.html"><span class="num">11</span> Contacto</a>
+</div>
+
+<section class="page-hero">
+  <div class="page-hero-bg" style="background-image:url('glsp_assets/hero-slide01.jpg')"></div>
+  <div class="page-hero-inner">
+    <div class="breadcrumb"><a href="index.html">Inicio</a><span class="sep">/</span><span>Historia</span></div>
+    <div class="page-chapter"><span class="num">Nº 02</span><span class="line"></span><span class="label">1869 — Presente</span></div>
+    <h1>Historia de la Masonería <em>en Paraguay</em></h1>
+    <p class="lede">Desde el levantamiento de columnas de la Logia Fe en 1869 hasta nuestros días — siglo y medio de presencia masónica en suelo paraguayo, atravesando reconstrucciones, guerras y la fundación de la república moderna.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="h-decades">
+      <button class="h-decade active" data-d="all">Toda la línea</button>
+      <button class="h-decade" data-d="1860">1860s</button>
+      <button class="h-decade" data-d="1870">1870s</button>
+      <button class="h-decade" data-d="1880">1880s</button>
+      <button class="h-decade" data-d="1890">1890s</button>
+      <button class="h-decade" data-d="1910">1910s</button>
+      <button class="h-decade" data-d="1920">1920s</button>
+      <button class="h-decade" data-d="1970">1970s</button>
+      <button class="h-decade" data-d="1980">1980s</button>
+      <button class="h-decade" data-d="1990">1990s</button>
+      <button class="h-decade" data-d="2000">2000s</button>
+      <button class="h-decade" data-d="2010">2010s</button>
+    </div>
+
+    <div class="htl">
+
+
+      <article class="htl-event reveal" data-decade="1860">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">18 de Abril · 1869</div>
+          <div class="htl-year">1869</div>
+          <h3>Levantamiento de Columnas de la Logia Fe, la primera en territorio paraguayo</h3>
+          <p>El acta de la constitución de esta Logia primigenia dice:</p>
+          <blockquote>&quot;A los 18 días de la luna de Iyar de A∴ de N∴ L∴ 5869, unos HH∴ reunidos en un lugar donde reina la paz y el silencio, estando a cubierto de la vista de los profanos resuelven levantar un Templ∴ a la virtud bajo los auspicios del S∴ A∴ del U∴ y solicitar  carta constitutiva  al Gr∴ Or∴ del Brasil en el Vall∴ de los Benedictinos, siendo su primer cuadro logial:</blockquote>
+          <p>Ven∴Maest∴             Coronel Francisco Vieira Faria Rocha
+1er. Vig∴                   Mayor Jorge Lopes da Costa Moreira
+2ndo. Vig∴                Antonio Silveira Solar...&quot;</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1870">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">7 de Septiembre · 1871</div>
+          <div class="htl-year">1871</div>
+          <h3>La Masonería Paraguaya se independiza de la brasileña</h3>
+          <p>Se produce la independencia del Gran Oriente del Brasil y el Gran Oriente y el Supremo Consejo del Rito Escoces Antiguo y Aceptado nacen en la ciudad capital de Asunción de la República del Paraguay.</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1870">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-year">1876</div>
+          <h3>Las fuerzas de ocupación abandonan el Paraguay</h3>
+          <p>Con la terminación de la ocupación del país las instituciones masónicas, así como las fuerzas brasileñas, dejan el país y las Logias cesan su labor, con la excepción de algunas pocas Logias que trabajaban bajo diferencias jurisdicciones.</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1880">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-year">1885</div>
+          <h3>La masonería Uruguaya en Paraguay</h3>
+          <p>El movimiento de la masonería uruguaya en Paraguay se originó a partir del regreso de los trofeos de la guerra paraguaya en 1885, arreglado por el Presidente Maximo Santos y orquestado por su comisión, compuesta por el Gran Maestro Carlos de Castro, quien favoreció la concesión del Grado 33° al Hermano Bernardino Caballero, Presidente del Paraguay durante los años 1880 y 1886, quien había sido iniciado en una Logia bajo patrocinio del Brasil y quien tuvo un rol preponderante en la fundación y desarrollo de la Masonería Paraguaya.</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1880">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">6 de Junio · 1887</div>
+          <div class="htl-year">1887</div>
+          <h3>De la mano de los masones uruguayos, renace la Masonería en el Paraguay</h3>
+          <p>Levanta Columnas, bajo los auspicios del Oriente del Uruguay, llevando el número de orden 66, la Logia Aurora del Paraguay.</p>
+          <p>Fueron sus fundadores los HH∴ Juan G. González, Bernardino Carballero, José Segundo Decoud, Ricardo Garcia, Francisco Regis de Oliveira, Patricio Escobar, Serafin Rivas Rodriguez, Christian Heisecke, Claudio Pinillos, Antonio L. Pecci, Francisco Turro, siendo su primer Ven∴Maest∴ el H∴ Dionisio Ramos Montero</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1880">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">6 de Junio · 1887</div>
+          <div class="htl-year">1887</div>
+          <h3>Fundación Logia: Aurora del Paraguay Nº 1</h3>
+          <p>Fundación Logia: Aurora del Paraguay Nº 1 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1890">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">8 de Noviembre · 1891</div>
+          <div class="htl-year">1891</div>
+          <h3>Fundación Logia: Sol Naciente Nº 2</h3>
+          <p>Fundación Logia: Sol Naciente Nº 2 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1890">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">20 de Mayo · 1892</div>
+          <div class="htl-year">1892</div>
+          <h3></h3>
+          <p>Por Decreto del Serenísimo Gran Oriente del Uruguay, se nombra a los HH∴, Bernardino Caballero, Serafin Rivas y Ricardo García, en comisión para Instalar la Logia Simbólica Sol Naciente Segunda, denominada así porque existía otra logia en el Oriente uruguayo con el mismo nombre.</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1890">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">11 de Agosto · 1892</div>
+          <div class="htl-year">1892</div>
+          <h3></h3>
+          <p>Queda instalada oficialmente como Logia Regular la Logia Sol Naciente Segunda con el número de orden 74, siendo los fundadores los HH∴  J.J. Mendez Sampaio, Christian Heisecke, Alfredo Boettner, Juan Carron, German Ibbecken, Antonio Castellani y Pablo Bergenmann.</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1890">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">1 de Octubre · 1892</div>
+          <div class="htl-year">1892</div>
+          <h3></h3>
+          <p>El Serenísimo Gran Oriente del Uruguay regulariza la Logia Sol Naciente 2da. y declara también como miembros fundadores a los HH∴ Víctor Guatier, Pedro Casartelli, Juan Villanueva, José C. Meza y Otto Weltti. El primer Ven∴ Maest∴ fue el H∴ Alfredo Boettner.-</p>
+          <p>Estas Logias fueron parte del cuadro fundador del Gran Oriente del Paraguay bajo los auspicios de la Gran Logia de la Masonería del Uruguay.</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1890">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">9 de Marzo · 1897</div>
+          <div class="htl-year">1897</div>
+          <h3>Fundación Logia: Libertad Nº 4</h3>
+          <p>Fundación Logia: Libertad Nº 4 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1890">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">6 de Septiembre · 1899</div>
+          <div class="htl-year">1899</div>
+          <h3>El Templo Masónico de Palma, considerado uno de los más bellos de Sudamérica y de Paraguay (Adquirido, el 6 de septiembre de 1899 en Asunción, Paraguay) es templo Masónico perteneciente al Gran Oriente del Paraguay de la antigua Gran Logia Simbólica del Paraguay, ubicado sobre la calle palma de la Ciudad de Asunción del Paraguay.</h3>
+          <p>Adquirido bajo la gestión del Gran Maestro Dr. Cecilio Báez en 1899, y fue diseñado por Ricardo Lloret y construido por José Vilá. Fue sede de actividades filantrópicas y como centro de ayuda durante la Gripe Española en 1918 y Hospital de Sangre durante la Guerra del Chaco, es considerado como símbolo emblemático de la Masonería Paraguaya.                           Fue restaurado y reinaugurado en una ceremonia en el mes de julio de año 2018, con la presencia de Autoridades Masónicas y Municipales, bajo la administración del Gran Maestro Benigno Villasanti y hecho patrimonio histórico del Paraguay por su historia y arquitectura.</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1910">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">2 de Marzo · 1910</div>
+          <div class="htl-year">1910</div>
+          <h3>La Gran Logia Unida de Inglaterra reconoce a la Gran Logia Simbólica del Paraguay</h3>
+          <p>En su reunión Trimestral, la Gran Logia Unida de Inglaterra reconoce a la Gran Logia Simbólica del Paraguay como Autoridad Independiente y Soberana de la Franc-Masonería Gremial de la República.</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1920">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">24 de Julio · 1926</div>
+          <div class="htl-year">1926</div>
+          <h3>Fundación Logia: Unión y Progreso Nº 9</h3>
+          <p>Fundación Logia: Unión y Progreso Nº 9 del Valle: Encarnación</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1970">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">6 de Noviembre · 1975</div>
+          <div class="htl-year">1975</div>
+          <h3>Fundación Logia: Alborada del Amambay Nº 10</h3>
+          <p>Fundación Logia: Alborada del Amambay Nº 10 del Valle: P.J.C.</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1970">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">1 de Diciembre · 1979</div>
+          <div class="htl-year">1979</div>
+          <h3>Fundación Logia: Luz y Amistad Nº 11</h3>
+          <p>Fundación Logia: Luz y Amistad Nº 11 del Valle: Ciudad del Este</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1980">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">11 de Octubre · 1980</div>
+          <div class="htl-year">1980</div>
+          <h3>Fundación Logia: Paz y Justicia Nº 12</h3>
+          <p>Fundación Logia: Paz y Justicia Nº 12 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1980">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">15 de Noviembre · 1980</div>
+          <div class="htl-year">1980</div>
+          <h3>Fundación Logia: Bernardino Caballero Nº 13</h3>
+          <p>Fundación Logia: Bernardino Caballero Nº 13 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1980">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">28 de Noviembre · 1983</div>
+          <div class="htl-year">1983</div>
+          <h3>Fundación Logia: Luz y Progreso Nº 6</h3>
+          <p>Fundación Logia: Luz y Progreso Nº 6 del Valle: San Lorenzo</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1980">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">10 de Mayo · 1984</div>
+          <div class="htl-year">1984</div>
+          <h3>Fundación Logia: Federico El Grande Nº 3</h3>
+          <p>Fundación Logia: Federico El Grande Nº 3 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1980">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">15 de Noviembre · 1986</div>
+          <div class="htl-year">1986</div>
+          <h3>Fundación Logia: Igualdad y Fraternidad Nº 14</h3>
+          <p>Fundación Logia: Igualdad y Fraternidad Nº 14 del Valle: Encarnación</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1980">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">18 de Julio · 1987</div>
+          <div class="htl-year">1987</div>
+          <h3>Fundación Logia: Concordia Nº 15</h3>
+          <p>Fundación Logia: Concordia Nº 15 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1990">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">4 de Agosto · 1990</div>
+          <div class="htl-year">1990</div>
+          <h3>Fundación Logia: José Félix Estigarríbia Nº 16</h3>
+          <p>Fundación Logia: José Félix Estigarríbia Nº 16 del Valle: Ciudad del Este</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1990">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">19 de Septiembre · 1992</div>
+          <div class="htl-year">1992</div>
+          <h3>Fundación Logia: Pitágoras Nº 17</h3>
+          <p>Fundación Logia: Pitágoras Nº 17 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1990">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">30 de Abril · 1994</div>
+          <div class="htl-year">1994</div>
+          <h3>Fundación Logia: Acacia Nº 18</h3>
+          <p>Fundación Logia: Acacia Nº 18 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1990">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">8 de Abril · 1995</div>
+          <div class="htl-year">1995</div>
+          <h3>Fundación Logia: Arandú Nº 120</h3>
+          <p>Fundación Logia: Arandú Nº 120 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1990">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">27 de Abril · 1996</div>
+          <div class="htl-year">1996</div>
+          <h3>Fundación Logia: Fraternidad Nº 121</h3>
+          <p>Fundación Logia: Fraternidad Nº 121 del Valle: Ciudad del Este</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1990">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">24 de Noviembre · 1997</div>
+          <div class="htl-year">1997</div>
+          <h3>Fundación Logia: Tekokatu Nº 124</h3>
+          <p>Fundación Logia: Tekokatu Nº 124 del Valle: Kapi`ata</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1990">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">24 de Noviembre · 1997</div>
+          <div class="htl-year">1997</div>
+          <h3>Fundación Logia: Minerva Nº 123</h3>
+          <p>Fundación Logia: Minerva Nº 123 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1990">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">3 de Octubre · 1998</div>
+          <div class="htl-year">1998</div>
+          <h3>Fundación Logia: Fénix Nº 127</h3>
+          <p>Fundación Logia: Fénix Nº 127 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1990">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">16 de Octubre · 1998</div>
+          <div class="htl-year">1998</div>
+          <h3>Fundación Logia: Millennium 3033 Nº 126</h3>
+          <p>Fundación Logia: Millennium 3033 Nº 126 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="1990">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">30 de Junio · 1999</div>
+          <div class="htl-year">1999</div>
+          <h3>Fundación Logia: Universo Nº 5</h3>
+          <p>Fundación Logia: Universo Nº 5 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">15 de Julio · 2000</div>
+          <div class="htl-year">2000</div>
+          <h3>Fundación Logia: José Gervasio Artígas Nº 130</h3>
+          <p>Fundación Logia: José Gervasio Artígas Nº 130 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">5 de Agosto · 2000</div>
+          <div class="htl-year">2000</div>
+          <h3>Fundación Logia: Cedro del Líbano Nº 128</h3>
+          <p>Fundación Logia: Cedro del Líbano Nº 128 del Valle: Ciudad del Este</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">21 de Septiembre · 2001</div>
+          <div class="htl-year">2001</div>
+          <h3>Fundación Logia: Caballeros del Templo Nº 132</h3>
+          <p>Fundación Logia: Caballeros del Templo Nº 132 del Valle: P.J.C.</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">18 de Mayo · 2002</div>
+          <div class="htl-year">2002</div>
+          <h3>Fundación Logia: Saint Germain Nº 19</h3>
+          <p>Fundación Logia: Saint Germain Nº 19 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">4 de Septiembre · 2002</div>
+          <div class="htl-year">2002</div>
+          <h3>Fundación Logia: Lautaro Nº 125</h3>
+          <p>Fundación Logia: Lautaro Nº 125 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">2 de Octubre · 2003</div>
+          <div class="htl-year">2003</div>
+          <h3>Fundación Logia: Wolfgang Amadeus Mozart Nº 136</h3>
+          <p>Fundación Logia: Wolfgang Amadeus Mozart Nº 136 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">3 de Octubre · 2003</div>
+          <div class="htl-year">2003</div>
+          <h3>Fundación Logia: Pensamiento Activo Nº 135</h3>
+          <p>Fundación Logia: Pensamiento Activo Nº 135 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">11 de Septiembre · 2004</div>
+          <div class="htl-year">2004</div>
+          <h3>Fundación Logia: Igualdad Nº 133</h3>
+          <p>Fundación Logia: Igualdad Nº 133 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">2 de Abril · 2005</div>
+          <div class="htl-year">2005</div>
+          <h3>Fundación Logia: Fede e Lavoro Nº 137</h3>
+          <p>Fundación Logia: Fede e Lavoro Nº 137 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">27 de Julio · 2006</div>
+          <div class="htl-year">2006</div>
+          <h3>Fundación Logia: Reunión Americana Nº 141</h3>
+          <p>Fundación Logia: Reunión Americana Nº 141 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">16 de Agosto · 2006</div>
+          <div class="htl-year">2006</div>
+          <h3>Fundación Logia: George Washington Nº 140</h3>
+          <p>Fundación Logia: George Washington Nº 140 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">16 de Agosto · 2006</div>
+          <div class="htl-year">2006</div>
+          <h3>Fundación Logia: Galileo Galilei Nº 143</h3>
+          <p>Fundación Logia: Galileo Galilei Nº 143 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">17 de Agosto · 2006</div>
+          <div class="htl-year">2006</div>
+          <h3>Fundación Logia: José Martí Nº 8</h3>
+          <p>Fundación Logia: José Martí Nº 8 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">23 de Mayo · 2007</div>
+          <div class="htl-year">2007</div>
+          <h3>Fundación Logia: Los Templarios Nº 144</h3>
+          <p>Fundación Logia: Los Templarios Nº 144 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">21 de Septiembre · 2007</div>
+          <div class="htl-year">2007</div>
+          <h3>Fundación Logia: Jorge Memmel Nº 145</h3>
+          <p>Fundación Logia: Jorge Memmel Nº 145 del Valle: Encarnación</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">14 de Mayo · 2008</div>
+          <div class="htl-year">2008</div>
+          <h3>Fundación Logia: Amistad y Armonía Nº 146</h3>
+          <p>Fundación Logia: Amistad y Armonía Nº 146 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">26 de Mayo · 2008</div>
+          <div class="htl-year">2008</div>
+          <h3>Fundación Logia: Estela Nº 147</h3>
+          <p>Fundación Logia: Estela Nº 147 del Valle: Villarrica</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">8 de Noviembre · 2008</div>
+          <div class="htl-year">2008</div>
+          <h3>Fundación Logia: Cerro Corá Nº 150</h3>
+          <p>Fundación Logia: Cerro Corá Nº 150 del Valle: P.J.C.</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">25 de Noviembre · 2008</div>
+          <div class="htl-year">2008</div>
+          <h3>Fundación Logia: Igualdad y Armonía Nº 148</h3>
+          <p>Fundación Logia: Igualdad y Armonía Nº 148 del Valle: Encarnación</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">25 de Noviembre · 2008</div>
+          <div class="htl-year">2008</div>
+          <h3>Fundación Logia: Alquimia Nº 149</h3>
+          <p>Fundación Logia: Alquimia Nº 149 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">25 de Noviembre · 2008</div>
+          <div class="htl-year">2008</div>
+          <h3>Fundación Logia: Unión Fraterna Nº 151</h3>
+          <p>Fundación Logia: Unión Fraterna Nº 151 del Valle: Ciudad del Este</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">28 de Febrero · 2009</div>
+          <div class="htl-year">2009</div>
+          <h3>Fundación Logia: Luz de Oriente Nº 152</h3>
+          <p>Fundación Logia: Luz de Oriente Nº 152 del Valle: Ciudad del Este</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">18 de Abril · 2009</div>
+          <div class="htl-year">2009</div>
+          <h3>Fundación Logia: Armonía Universal Nº 153</h3>
+          <p>Fundación Logia: Armonía Universal Nº 153 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">18 de Abril · 2009</div>
+          <div class="htl-year">2009</div>
+          <h3>Fundación Logia: Fortaleza de San Juan de Escocia Nº 154</h3>
+          <p>Fundación Logia: Fortaleza de San Juan de Escocia Nº 154 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">6 de Mayo · 2009</div>
+          <div class="htl-year">2009</div>
+          <h3>Fundación Logia: Reconquista Nº 155</h3>
+          <p>Fundación Logia: Reconquista Nº 155 del Valle: Minga Guazu</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">19 de Agosto · 2009</div>
+          <div class="htl-year">2009</div>
+          <h3>Fundación Logia: Concordia Universal Nº 156</h3>
+          <p>Fundación Logia: Concordia Universal Nº 156 del Valle: P.J.C.</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">30 de Octubre · 2009</div>
+          <div class="htl-year">2009</div>
+          <h3>Fundación Logia: Hiram Abiff Nº 157</h3>
+          <p>Fundación Logia: Hiram Abiff Nº 157 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">21 de Noviembre · 2009</div>
+          <div class="htl-year">2009</div>
+          <h3>Fundación Logia: Constructores del Templo Nº 158</h3>
+          <p>Fundación Logia: Constructores del Templo Nº 158 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">10 de Diciembre · 2009</div>
+          <div class="htl-year">2009</div>
+          <h3>Fundación Logia: Fraternidad Masónica Nº 7</h3>
+          <p>Fundación Logia: Fraternidad Masónica Nº 7 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">10 de Diciembre · 2009</div>
+          <div class="htl-year">2009</div>
+          <h3>Fundación Logia: Estrella del Oriente Nº 159</h3>
+          <p>Fundación Logia: Estrella del Oriente Nº 159 del Valle: Ciudad del Este</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">10 de Diciembre · 2009</div>
+          <div class="htl-year">2009</div>
+          <h3>Fundación Logia: Illuminati Nº 160</h3>
+          <p>Fundación Logia: Illuminati Nº 160 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2000">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">10 de Diciembre · 2009</div>
+          <div class="htl-year">2009</div>
+          <h3>Fundación Logia: Caballeros de la Luz Nº 161</h3>
+          <p>Fundación Logia: Caballeros de la Luz Nº 161 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">3 de Junio · 2010</div>
+          <div class="htl-year">2010</div>
+          <h3>Fundación Logia: Caballeros del Arte Real Nº 162</h3>
+          <p>Fundación Logia: Caballeros del Arte Real Nº 162 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">3 de Junio · 2010</div>
+          <div class="htl-year">2010</div>
+          <h3>Fundación Logia: Hermanos Templarios del Sur Nº 163</h3>
+          <p>Fundación Logia: Hermanos Templarios del Sur Nº 163 del Valle: Encarnación</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">3 de Junio · 2010</div>
+          <div class="htl-year">2010</div>
+          <h3>Fundación Logia: Caballeros del Rey Salomón Nº 164</h3>
+          <p>Fundación Logia: Caballeros del Rey Salomón Nº 164 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">7 de Agosto · 2010</div>
+          <div class="htl-year">2010</div>
+          <h3>Fundación Logia: Kybalion 777 Nº 166</h3>
+          <p>Fundación Logia: Kybalion 777 Nº 166 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">18 de Agosto · 2010</div>
+          <div class="htl-year">2010</div>
+          <h3>Fundación Logia: Bicentenario de la Ind. Nac. Nº 200</h3>
+          <p>Fundación Logia: Bicentenario de la Ind. Nac. Nº 200 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">27 de Septiembre · 2010</div>
+          <div class="htl-year">2010</div>
+          <h3>Fundación Logia: Alianza Nº 201</h3>
+          <p>Fundación Logia: Alianza Nº 201 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">7 de Junio · 2011</div>
+          <div class="htl-year">2011</div>
+          <h3>Fundación Logia: Caballeros del Oriente Nº 202</h3>
+          <p>Fundación Logia: Caballeros del Oriente Nº 202 del Valle: Ciudad del Este</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">4 de Julio · 2011</div>
+          <div class="htl-year">2011</div>
+          <h3>Fundación Logia: Labor &amp; Constancia Nº 203</h3>
+          <p>Fundación Logia: Labor &amp; Constancia Nº 203 del Valle: Concepción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">16 de Julio · 2011</div>
+          <div class="htl-year">2011</div>
+          <h3>Fundación Logia: Primero de Marzo Nº 204</h3>
+          <p>Fundación Logia: Primero de Marzo Nº 204 del Valle: Pte. Franco</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">27 de Agosto · 2011</div>
+          <div class="htl-year">2011</div>
+          <h3>Fundación Logia: Perseverancia Nº 215</h3>
+          <p>Fundación Logia: Perseverancia Nº 215 del Valle: Ciudad del Este</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">15 de Octubre · 2011</div>
+          <div class="htl-year">2011</div>
+          <h3>Fundación Logia: Veritas Nº 205</h3>
+          <p>Fundación Logia: Veritas Nº 205 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">23 de Abril · 2012</div>
+          <div class="htl-year">2012</div>
+          <h3>Fundación Logia: Thomas Jeffersson Nº 207</h3>
+          <p>Fundación Logia: Thomas Jeffersson Nº 207 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">5 de Junio · 2012</div>
+          <div class="htl-year">2012</div>
+          <h3>Fundación Logia: Cecilio Baez Nº 208</h3>
+          <p>Fundación Logia: Cecilio Baez Nº 208 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">5 de Junio · 2012</div>
+          <div class="htl-year">2012</div>
+          <h3>Fundación Logia: Atenea Nº 206</h3>
+          <p>Fundación Logia: Atenea Nº 206 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">29 de Noviembre · 2012</div>
+          <div class="htl-year">2012</div>
+          <h3>Fundación Logia: Amanecer Nº 209</h3>
+          <p>Fundación Logia: Amanecer Nº 209 del Valle: San Lorenzo</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">25 de Abril · 2013</div>
+          <div class="htl-year">2013</div>
+          <h3>Fundación Logia: Fé Nº 210</h3>
+          <p>Fundación Logia: Fé Nº 210 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">12 de Junio · 2013</div>
+          <div class="htl-year">2013</div>
+          <h3>Fundación Logia: Lealtad Fraterna Nº 212</h3>
+          <p>Fundación Logia: Lealtad Fraterna Nº 212 del Valle: Ciudad del Este</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">15 de Junio · 2013</div>
+          <div class="htl-year">2013</div>
+          <h3>Fundación Logia: Cruz de Malta Nº 211</h3>
+          <p>Fundación Logia: Cruz de Malta Nº 211 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">12 de Febrero · 2014</div>
+          <div class="htl-year">2014</div>
+          <h3>Fundación Logia: Asilo de la Virtud Nº 214</h3>
+          <p>Fundación Logia: Asilo de la Virtud Nº 214 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">5 de Marzo · 2014</div>
+          <div class="htl-year">2014</div>
+          <h3>Fundación Logia: Armagedon Nº 216</h3>
+          <p>Fundación Logia: Armagedon Nº 216 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">5 de Junio · 2014</div>
+          <div class="htl-year">2014</div>
+          <h3>Fundación Logia: Barones del Templo de Salomón Nº 213</h3>
+          <p>Fundación Logia: Barones del Templo de Salomón Nº 213 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">25 de Junio · 2014</div>
+          <div class="htl-year">2014</div>
+          <h3>Fundación Logia: Caballeros de San Juan de Jerusalen Nº 220</h3>
+          <p>Fundación Logia: Caballeros de San Juan de Jerusalen Nº 220 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">5 de Julio · 2014</div>
+          <div class="htl-year">2014</div>
+          <h3>Fundación Logia: Victoria Nº 218</h3>
+          <p>Fundación Logia: Victoria Nº 218 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">8 de Octubre · 2014</div>
+          <div class="htl-year">2014</div>
+          <h3>Fundación Logia: Prometeo Nº 222</h3>
+          <p>Fundación Logia: Prometeo Nº 222 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">8 de Octubre · 2014</div>
+          <div class="htl-year">2014</div>
+          <h3>Fundación Logia: Utopía Nº 219</h3>
+          <p>Fundación Logia: Utopía Nº 219 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">17 de Octubre · 2014</div>
+          <div class="htl-year">2014</div>
+          <h3>Fundación Logia: Luces de la Independencia Nº 217</h3>
+          <p>Fundación Logia: Luces de la Independencia Nº 217 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">17 de Octubre · 2014</div>
+          <div class="htl-year">2014</div>
+          <h3>Fundación Logia: Comuneros Nº 221</h3>
+          <p>Fundación Logia: Comuneros Nº 221 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">11 de Mayo · 2015</div>
+          <div class="htl-year">2015</div>
+          <h3>Fundación Logia: Centinelas de Humaitá N° 224</h3>
+          <p>Fundación Logia: Centinelas de Humaitá N° 224 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/hero-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">11 de Mayo · 2015</div>
+          <div class="htl-year">2015</div>
+          <h3>Fundación Logia: Comuneros Nº 221</h3>
+          <p>Fundación Logia: Comuneros Nº 221 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide01.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">20 de Noviembre · 2015</div>
+          <div class="htl-year">2015</div>
+          <h3>Fundación Logia: Perfecta Fe Nº 223</h3>
+          <p>Fundación Logia: Perfecta Fe Nº 223 del Valle: Ciudad del Este</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide02.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">3 de Mayo · 2017</div>
+          <div class="htl-year">2017</div>
+          <h3>Fundación Logia: Caballeros de San Juan de Jerusalen Nº 220</h3>
+          <p>Fundación Logia: Caballeros de San Juan de Jerusalen Nº 220 del Valle: Asunción</p>
+        </div>
+      </article>
+
+      <article class="htl-event reveal" data-decade="2010">
+        <div class="htl-img-wrap"><img src="glsp_assets/masoneria-slide03.jpg" alt=""></div>
+        <div class="htl-content">
+          <div class="htl-date">8 de Junio · 2019</div>
+          <div class="htl-year">2019</div>
+          <h3>Fundación Logia: Patricio Escobar Nº 225</h3>
+          <p>Fundación Logia: Patricio Escobar Nº 225 del Valle: Asunción</p>
+        </div>
+      </article>
+
+    
+
+    </div>
+  </div>
+</section>
+
+<!-- Lodges by decade -->
+<section class="lodges-section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="chapter-mark"><span class="num">ii.</span><span class="line"></span><span class="label">Logias fundadas</span></div>
+        <h2>Las 82 Logias <em>de la jurisdicción</em></h2>
+      </div>
+      <p class="lede">Listado histórico de logias regularizadas bajo la Gran Logia Simbólica del Paraguay, organizadas por década de fundación.</p>
+    </div>
+
+    <div class="lodges-grid reveal">
+      <div class="lodges-decade">
+        <h3>Décadas fundacionales · 1880–1920</h3>
+        <ul>
+          <li><span class="l-num">66</span><span class="l-name">Aurora del Paraguay Nº 1</span><span class="l-loc">Asunción · 1887</span></li>
+          <li><span class="l-num">74</span><span class="l-name">Sol Naciente Nº 2</span><span class="l-loc">Asunción · 1891</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Libertad Nº 4</span><span class="l-loc">Asunción · 1897</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Unión y Progreso Nº 9</span><span class="l-loc">Encarnación · 1926</span></li>
+        </ul>
+      </div>
+      <div class="lodges-decade">
+        <h3>Década de 1970–1980</h3>
+        <ul>
+          <li><span class="l-num">·</span><span class="l-name">Alborada del Amambay Nº 10</span><span class="l-loc">P.J.C. · 1975</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Luz y Amistad Nº 11</span><span class="l-loc">Ciudad del Este · 1979</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Paz y Justicia Nº 12</span><span class="l-loc">Asunción · 1980</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Bernardino Caballero Nº 13</span><span class="l-loc">Asunción · 1980</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Luz y Progreso Nº 6</span><span class="l-loc">San Lorenzo · 1983</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Federico El Grande Nº 3</span><span class="l-loc">Asunción · 1984</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Igualdad y Fraternidad Nº 14</span><span class="l-loc">Encarnación · 1986</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Concordia Nº 15</span><span class="l-loc">Asunción · 1987</span></li>
+        </ul>
+      </div>
+      <div class="lodges-decade">
+        <h3>Década de 1990</h3>
+        <ul>
+          <li><span class="l-num">·</span><span class="l-name">José Félix Estigarribia Nº 16</span><span class="l-loc">Ciudad del Este · 1990</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Pitágoras Nº 17</span><span class="l-loc">Asunción · 1992</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Acacia Nº 18</span><span class="l-loc">Asunción · 1994</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Arandú Nº 120</span><span class="l-loc">Asunción · 1995</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Fraternidad Nº 121</span><span class="l-loc">Ciudad del Este · 1996</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Minerva Nº 123</span><span class="l-loc">Asunción · 1997</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Tekokatu Nº 124</span><span class="l-loc">Kapi'ata · 1997</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Millennium 3033 Nº 126</span><span class="l-loc">Asunción · 1998</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Fénix Nº 127</span><span class="l-loc">Asunción · 1998</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Universo Nº 5</span><span class="l-loc">Asunción · 1999</span></li>
+        </ul>
+      </div>
+      <div class="lodges-decade">
+        <h3>Década de 2000</h3>
+        <ul>
+          <li><span class="l-num">·</span><span class="l-name">Cedro del Líbano Nº 128</span><span class="l-loc">Ciudad del Este · 2000</span></li>
+          <li><span class="l-num">·</span><span class="l-name">José Gervasio Artigas Nº 130</span><span class="l-loc">Asunción · 2000</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Caballeros del Templo Nº 132</span><span class="l-loc">P.J.C. · 2001</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Saint Germain Nº 19</span><span class="l-loc">Asunción · 2002</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Lautaro Nº 125</span><span class="l-loc">Asunción · 2002</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Pensamiento Activo Nº 135</span><span class="l-loc">Asunción · 2003</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Wolfgang A. Mozart Nº 136</span><span class="l-loc">Asunción · 2003</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Igualdad Nº 133</span><span class="l-loc">Asunción · 2004</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Fede e Lavoro Nº 137</span><span class="l-loc">Asunción · 2005</span></li>
+          <li><span class="l-num">·</span><span class="l-name">José Martí Nº 8</span><span class="l-loc">Asunción · 2006</span></li>
+          <li><span class="l-num">·</span><span class="l-name">George Washington Nº 140</span><span class="l-loc">Asunción · 2006</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Reunión Americana Nº 141</span><span class="l-loc">Asunción · 2006</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Galileo Galilei Nº 143</span><span class="l-loc">Asunción · 2006</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Los Templarios Nº 144</span><span class="l-loc">Asunción · 2007</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Jorge Memmel Nº 145</span><span class="l-loc">Encarnación · 2007</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Amistad y Armonía Nº 146</span><span class="l-loc">Asunción · 2008</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Estela Nº 147</span><span class="l-loc">Villarrica · 2008</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Cerro Corá Nº 150</span><span class="l-loc">P.J.C. · 2008</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Fraternidad Masónica Nº 7</span><span class="l-loc">Asunción · 2009</span></li>
+        </ul>
+      </div>
+      <div class="lodges-decade">
+        <h3>Década de 2010</h3>
+        <ul>
+          <li><span class="l-num">·</span><span class="l-name">Caballeros del Arte Real Nº 162</span><span class="l-loc">Asunción · 2010</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Hermanos Templarios del Sur Nº 163</span><span class="l-loc">Encarnación · 2010</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Caballeros del Rey Salomón Nº 164</span><span class="l-loc">Asunción · 2010</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Kybalion 777 Nº 166</span><span class="l-loc">Asunción · 2010</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Bicentenario Nº 200</span><span class="l-loc">Asunción · 2010</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Caballeros del Oriente Nº 202</span><span class="l-loc">Ciudad del Este · 2011</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Labor & Constancia Nº 203</span><span class="l-loc">Concepción · 2011</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Primero de Marzo Nº 204</span><span class="l-loc">Pte. Franco · 2011</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Veritas Nº 205</span><span class="l-loc">Asunción · 2011</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Atenea Nº 206</span><span class="l-loc">Asunción · 2012</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Thomas Jefferson Nº 207</span><span class="l-loc">Asunción · 2012</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Cecilio Báez Nº 208</span><span class="l-loc">Asunción · 2012</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Amanecer Nº 209</span><span class="l-loc">San Lorenzo · 2012</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Fé Nº 210</span><span class="l-loc">Asunción · 2013</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Cruz de Malta Nº 211</span><span class="l-loc">Asunción · 2013</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Lealtad Fraterna Nº 212</span><span class="l-loc">Ciudad del Este · 2013</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Asilo de la Virtud Nº 214</span><span class="l-loc">Asunción · 2014</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Comuneros Nº 221</span><span class="l-loc">Asunción · 2014</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Centinelas de Humaitá Nº 224</span><span class="l-loc">Asunción · 2015</span></li>
+          <li><span class="l-num">·</span><span class="l-name">Patricio Escobar Nº 225</span><span class="l-loc">Asunción · 2019</span></li>
+        </ul>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:60px">
+      <a href="#" class="btn-text" style="color:#fff;border-color:rgba(255,255,255,.4)">Ver listado completo de las 82 logias <i class="fas fa-arrow-right"></i></a>
+    </div>
+  </div>
+</section>
+
+<!-- Videos -->
+<section class="section section-ink" style="border-top:1px solid rgba(201,164,73,.15)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div>
+        <div class="chapter-mark"><span class="num">iii.</span><span class="line"></span><span class="label">Documentales</span></div>
+        <h2>Memoria <em>audiovisual</em></h2>
+      </div>
+      <p class="lede">Recorridos documentales por los espacios y la memoria de la Masonería paraguaya.</p>
+    </div>
+    <div class="video-grid reveal">
+      <div class="video-card">
+        <span class="video-num">i.</span>
+        <div class="video-frame"><iframe src="https://www.youtube.com/embed/2ViigseeH3Y?rel=0" allowfullscreen loading="lazy"></iframe></div>
+        <h4>Museo de la Gran Logia Simbólica del Paraguay</h4>
+        <p>El Museo de la francmasonería paraguaya en la sede del Gran Oriente — Luís Alberto de Herrera Nº 1071 c/ Brasil, Asunción.</p>
+      </div>
+      <div class="video-card">
+        <span class="video-num">ii.</span>
+        <div class="video-frame"><iframe src="https://www.youtube.com/embed/Zy1OLYouJl0?rel=0" allowfullscreen loading="lazy"></iframe></div>
+        <h4>Templo Histórico de Palma</h4>
+        <p>Considerado uno de los más bellos de Sudamérica, adquirido el 6 de septiembre de 1899. Hospital de Sangre durante la Guerra del Chaco. Patrimonio Histórico desde 2018.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer" id="footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <img src="glsp_assets/logo-footer.png" alt="" class="seal">
+        <h3>Gran Logia Simbólica<br>del Paraguay</h3>
+        <div class="org-meta">Fundada en 1923</div>
+        <p>La obediencia masónica regular del Paraguay — origen y continuidad de la verdadera masonería paraguaya.</p>
+      </div>
+      <div>
+        <h4>Secciones</h4>
+        <ul>
+          <li><a href="gran-logia.html">Gran Logia</a></li>
+          <li><a href="historia.html">Historia</a></li>
+          <li><a href="noticias.html">Noticias</a></li>
+          <li><a href="centro-cultural.html">Centro Cultural</a></li>
+          <li><a href="masoneria.html">Masonería</a></li>
+          <li><a href="filantropia.html">Filantropía</a></li>
+        </ul>
+      </div>
+      <div class="footer-contact">
+        <h4>Contacto</h4>
+        <span class="label">Dirección</span><p>Luís Alberto de Herrera Nº 1071<br>c/ Brasil — Asunción, Paraguay</p>
+        <span class="label">Correo</span><p>secejecutiva@glsp.org.py</p>
+      </div>
+      <div>
+        <h4>Síguenos</h4>
+        <p style="font-family:Lora,serif;font-style:italic;color:var(--gold)">@GranLogiaSimbolicaPy</p>
+        <div class="social-row">
+          <a href="#"><i class="fab fa-facebook-f"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-x-twitter"></i></a>
+          <a href="#"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© <span data-year>2026</span> Gran Logia Simbólica del Paraguay</div>
+      <div>Diseño & desarrollo <em>Mister Co.</em></div>
+    </div>
+  </div>
+</footer>
+
+<button class="back-top" id="backTop"><i class="fas fa-arrow-up"></i></button>
+<script src="assets/site.js"></script>
+<script src="assets/i18n.js"></script>
+<script>
+// Decade filter
+document.querySelectorAll('.h-decade').forEach(b=>{
+  b.addEventListener('click',()=>{
+    document.querySelectorAll('.h-decade').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    const d=b.dataset.d;
+    document.querySelectorAll('.htl-event').forEach(e=>{
+      e.style.display=(d==='all'||e.dataset.decade===d)?'grid':'none';
+    });
+  });
+});
+</script>
+</body>
+</html>
