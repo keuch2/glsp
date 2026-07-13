@@ -13,5 +13,8 @@
 # Fotos de templos (147MB) — contenido pesado, fuera del repo
 /templos/
 
+# Fotos crudas del museo (material original sin procesar) — fuera del repo
+/fotos_museo/
+
 # Prompts internos de generación (privados)
 /PROMPT_*.md
