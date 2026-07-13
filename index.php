@@ -178,7 +178,7 @@ include __DIR__ . '/includes/header.php';
   </div>
 </section>
 
-<section class="section" id="centro-cultural">
+<section class="section" id="museo">
   <div class="wrap">
     <div class="section-head reveal">
       <div>
@@ -200,7 +200,7 @@ include __DIR__ . '/includes/header.php';
         <span class="pill"><i class="fas fa-torii-gate"></i> Templos</span>
         <span class="pill"><i class="fas fa-masks-theater"></i> Eventos</span>
       </div>
-      <div class="cc-teaser-cta"><a href="centro-cultural.php" class="btn-primary">Visitar el Museo <i class="fas fa-arrow-right"></i></a></div>
+      <div class="cc-teaser-cta"><a href="museo.php" class="btn-primary">Visitar el Museo <i class="fas fa-arrow-right"></i></a></div>
     </div>
   </div>
 </section>

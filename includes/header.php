@@ -1,6 +1,6 @@
 <?php
 // Expected variables set by each page:
-// $activePage  string  — 'inicio'|'historia'|'noticias'|'centro-cultural'|'masoneria'|'filantropia'|'gran-logia'|'contacto'
+// $activePage  string  — 'inicio'|'historia'|'noticias'|'museo'|'masoneria'|'filantropia'|'gran-logia'|'contacto'
 // $pageTitle   string  — full <title> text
 // $pageDesc    string  — meta description (optional)
 $activePage = $activePage ?? '';
@@ -68,7 +68,7 @@ if (is_file($pageCss)): ?>
       </div>
       <a class="<?= nav_class('historia', $activePage) ?>" href="<?= $base ?>historia.php">Historia</a>
       <a class="<?= nav_class('noticias', $activePage) ?>" href="<?= $base ?>noticias/">Noticias</a>
-      <a class="<?= nav_class('centro-cultural', $activePage) ?>" href="<?= $base ?>centro-cultural.php">Museo</a>
+      <a class="<?= nav_class('museo', $activePage) ?>" href="<?= $base ?>museo.php">Museo</a>
       <a class="<?= nav_class('eventos', $activePage) ?>" href="https://glsp.org.py/eventos" target="_blank" rel="noopener">Eventos<i class="fas fa-arrow-up-right-from-square nav-ext"></i></a>
       <a class="<?= nav_class('filantropia', $activePage) ?>" href="<?= $base ?>filantropia.php">Filantropía</a>
       <a class="<?= nav_class('masoneria', $activePage) ?>" href="<?= $base ?>masoneria.php">Masonería</a>
@@ -83,7 +83,7 @@ if (is_file($pageCss)): ?>
   <a href="<?= $base ?>gran-logia.php"><span class="num">01</span> Gran Logia</a>
   <a href="<?= $base ?>historia.php"><span class="num">02</span> Historia</a>
   <a href="<?= $base ?>noticias/"><span class="num">03</span> Noticias</a>
-  <a href="<?= $base ?>centro-cultural.php"><span class="num">04</span> Museo</a>
+  <a href="<?= $base ?>museo.php"><span class="num">04</span> Museo</a>
   <a href="https://glsp.org.py/eventos" target="_blank" rel="noopener"><span class="num">05</span> Eventos <i class="fas fa-arrow-up-right-from-square" style="font-size:.7rem;opacity:.5;margin-left:4px"></i></a>
   <a href="<?= $base ?>masoneria.php"><span class="num">06</span> Masonería</a>
   <a href="<?= $base ?>filantropia.php"><span class="num">07</span> Filantropía</a>

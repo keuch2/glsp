@@ -14,9 +14,9 @@ let lbIdx=0;
 function openLB(i){
   const it=lbItems[i];
   lbIdx=i;
-  document.getElementById('lbTitle').textContent=it.dataset.title;
-  document.getElementById('lbDesc').textContent=it.dataset.desc;
-  document.getElementById('lbInfo').textContent=it.dataset.info;
+  document.getElementById('lbTitle').textContent=it.dataset.title||'';
+  document.getElementById('lbDesc').textContent=it.dataset.desc||'';
+  document.getElementById('lbInfo').textContent=it.dataset.info||'';
   const im=it.querySelector('img');
   document.getElementById('lbImg').innerHTML=im?'<img src="'+im.src+'" alt="">':'<span style="color:rgba(255,255,255,.4);font-family:Lora,serif;font-style:italic">[ Imagen del objeto del museo ]</span>';
   lb.classList.add('open');

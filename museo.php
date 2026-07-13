@@ -1,5 +1,5 @@
 <?php
-$activePage = 'centro-cultural';
+$activePage = 'museo';
 $pageTitle  = 'Museo y Centro Cultural Masónico — Gran Logia Simbólica del Paraguay';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
@@ -56,33 +56,26 @@ include __DIR__ . '/includes/header.php';
       <h2 class="reveal" style="font-family:'Lora',serif;font-weight:500;font-size:2.2rem;margin-bottom:50px;letter-spacing:-.01em">Recorrido <em style="color:var(--gold-deep)">visual</em></h2>
 
       <div class="gallery reveal">
-        <div class="gallery-item" data-title="Sala principal del Museo" data-desc="Vista panorámica de la sala central del Museo Masónico, con las vitrinas de regalia y documentos fundacionales." data-info="Sala central">
-          <img src="glsp_assets/masoneria-slide01.jpg" alt="">
-          <div class="gallery-item-meta"><span class="num">— I.</span><span class="name">Sala principal</span></div>
+        <div class="gallery-item">
+          <img src="glsp_assets/museo-01-sala-principal.jpg" alt="Museo Masónico">
         </div>
-        <div class="gallery-item" data-title="Vitrina histórica" data-desc="Mobiliario ritual y mandiles ceremoniales pertenecientes a los primeros Grandes Maestros." data-info="Vitrina · siglo XX">
-          <div class="gallery-item-placeholder"><i class="fas fa-image"></i><span>Foto del museo</span></div>
-          <div class="gallery-item-meta"><span class="num">— II.</span><span class="name">Vitrina histórica</span></div>
+        <div class="gallery-item">
+          <img src="glsp_assets/museo-02-vitrina.jpg" alt="Museo Masónico">
         </div>
-        <div class="gallery-item" data-title="Sala de los símbolos" data-desc="Espacio dedicado a los elementos simbólicos de la tradición masónica — compás, escuadra, plomada y nivel." data-info="Sala temática">
-          <div class="gallery-item-placeholder"><i class="fas fa-compass-drafting"></i><span>Sala de símbolos</span></div>
-          <div class="gallery-item-meta"><span class="num">— III.</span><span class="name">Sala de los símbolos</span></div>
+        <div class="gallery-item">
+          <img src="glsp_assets/museo-03-simbolos.jpg" alt="Museo Masónico">
         </div>
-        <div class="gallery-item" data-title="Documentos fundacionales" data-desc="Actas, cartas patentes y sellos institucionales originales conservados desde 1869." data-info="Archivo expuesto">
-          <div class="gallery-item-placeholder"><i class="fas fa-scroll"></i><span>Documentos</span></div>
-          <div class="gallery-item-meta"><span class="num">— IV.</span><span class="name">Documentos fundacionales</span></div>
+        <div class="gallery-item">
+          <img src="glsp_assets/museo-04-documentos.jpg" alt="Museo Masónico">
         </div>
-        <div class="gallery-item" data-title="Biblioteca histórica" data-desc="Miles de volúmenes sobre simbolismo, filosofía masónica e historia paraguaya." data-info="Biblioteca">
-          <img src="glsp_assets/masoneria-slide02.jpg" alt="">
-          <div class="gallery-item-meta"><span class="num">— V.</span><span class="name">Biblioteca histórica</span></div>
+        <div class="gallery-item">
+          <img src="glsp_assets/museo-05-biblioteca.jpg" alt="Museo Masónico">
         </div>
-        <div class="gallery-item" data-title="Galería de retratos" data-desc="Retratos de los 43 Grandes Maestros que han presidido la Gran Logia Simbólica del Paraguay." data-info="Galería">
-          <img src="glsp_assets/hero-slide02.jpg" alt="">
-          <div class="gallery-item-meta"><span class="num">— VI.</span><span class="name">Galería de retratos</span></div>
+        <div class="gallery-item">
+          <img src="glsp_assets/museo-06-retratos.jpg" alt="Museo Masónico">
         </div>
-        <div class="gallery-item" data-title="Detalle arquitectónico" data-desc="Detalle de la ornamentación interior del museo, con elementos simbólicos masónicos integrados al diseño arquitectónico." data-info="Arquitectura">
-          <img src="glsp_assets/hero-slide03.jpg" alt="">
-          <div class="gallery-item-meta"><span class="num">— VII.</span><span class="name">Detalle arquitectónico</span></div>
+        <div class="gallery-item">
+          <img src="glsp_assets/museo-07-arquitectura.jpg" alt="Museo Masónico">
         </div>
       </div>
 
@@ -103,40 +96,6 @@ include __DIR__ . '/includes/header.php';
         </div>
         <div class="reveal">
           <img src="glsp_assets/masoneria-slide01.jpg" alt="Gran Archivo" style="width:100%;aspect-ratio:4/5;object-fit:cover;border:1px solid var(--rule)">
-        </div>
-      </div>
-
-      <div class="chapter-mark reveal"><span class="num">ii.</span><span class="line"></span><span class="label">El acervo en imágenes</span></div>
-      <h2 class="reveal" style="font-family:'Lora',serif;font-weight:500;font-size:2rem;margin-bottom:50px;letter-spacing:-.01em">Documentos, libros <em style="color:var(--gold-deep);font-style:italic">y objetos</em></h2>
-
-      <div class="gallery reveal" style="margin-bottom:60px">
-        <div class="gallery-item" data-title="Actas históricas" data-desc="Volúmenes encuadernados con las actas originales de las primeras logias paraguayas." data-info="Documentación · siglo XIX">
-          <div class="gallery-item-placeholder"><i class="fas fa-scroll"></i><span>Actas históricas</span></div>
-          <div class="gallery-item-meta"><span class="num">— I.</span><span class="name">Actas históricas</span></div>
-        </div>
-        <div class="gallery-item" data-title="Biblioteca masónica" data-desc="Miles de volúmenes sobre filosofía, simbolismo, ritual e historia masónica universal y paraguaya." data-info="Biblioteca">
-          <img src="glsp_assets/masoneria-slide02.jpg" alt="">
-          <div class="gallery-item-meta"><span class="num">— II.</span><span class="name">Biblioteca masónica</span></div>
-        </div>
-        <div class="gallery-item" data-title="Cartas patentes" data-desc="Cartas patentes de las logias del Paraguay y de las obediencias internacionales que reconocen a la GLSP." data-info="Documentos oficiales">
-          <div class="gallery-item-placeholder"><i class="fas fa-stamp"></i><span>Cartas patentes</span></div>
-          <div class="gallery-item-meta"><span class="num">— III.</span><span class="name">Cartas patentes</span></div>
-        </div>
-        <div class="gallery-item" data-title="Fotografías históricas" data-desc="Archivo fotográfico que documenta tenidas, ceremonias y figuras de la masonería paraguaya desde fines del siglo XIX." data-info="Archivo fotográfico">
-          <img src="glsp_assets/hero-slide02.jpg" alt="">
-          <div class="gallery-item-meta"><span class="num">— IV.</span><span class="name">Fotografías históricas</span></div>
-        </div>
-        <div class="gallery-item" data-title="Objetos rituales" data-desc="Mandiles ceremoniales, joyas masónicas y mobiliario ritual de las primeras logias paraguayas." data-info="Objetos rituales">
-          <div class="gallery-item-placeholder"><i class="fas fa-gem"></i><span>Objetos rituales</span></div>
-          <div class="gallery-item-meta"><span class="num">— V.</span><span class="name">Objetos rituales</span></div>
-        </div>
-        <div class="gallery-item" data-title="Correspondencia diplomática" data-desc="Correspondencia oficial con la Gran Logia Unida de Inglaterra, la Confederación Masónica Interamericana y otras obediencias del mundo." data-info="Correspondencia">
-          <div class="gallery-item-placeholder"><i class="fas fa-envelope-open-text"></i><span>Correspondencia</span></div>
-          <div class="gallery-item-meta"><span class="num">— VI.</span><span class="name">Correspondencia</span></div>
-        </div>
-        <div class="gallery-item" data-title="Sellos institucionales" data-desc="Sellos del Gran Oriente del Paraguay y de la Gran Logia Simbólica desde sus respectivas constituciones." data-info="Heráldica institucional">
-          <img src="glsp_assets/hero-slide03.jpg" alt="">
-          <div class="gallery-item-meta"><span class="num">— VII.</span><span class="name">Sellos institucionales</span></div>
         </div>
       </div>
 
