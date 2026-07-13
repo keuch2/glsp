@@ -1,6 +1,6 @@
 <?php
 $activePage = 'centro-cultural';
-$pageTitle  = 'Centro Cultural — Gran Logia Simbólica del Paraguay';
+$pageTitle  = 'Museo y Centro Cultural Masónico — Gran Logia Simbólica del Paraguay';
 require_once __DIR__ . '/includes/db.php';
 require_once __DIR__ . '/includes/functions.php';
 include __DIR__ . '/includes/header.php';
@@ -9,9 +9,9 @@ include __DIR__ . '/includes/header.php';
 <section class="page-hero">
   <div class="page-hero-bg" style="background-image:url('templos/palma-asuncion/cover.jpg')"></div>
   <div class="page-hero-inner">
-    <div class="breadcrumb"><a href="index.php">Inicio</a><span class="sep">/</span><span>Centro Cultural</span></div>
+    <div class="breadcrumb"><a href="index.php">Inicio</a><span class="sep">/</span><span>Museo y Centro Cultural Masónico</span></div>
     <div class="page-chapter"><span class="num">Nº 04</span><span class="line"></span><span class="label">Patrimonio</span></div>
-    <h1>Centro Cultural <em>Masónico</em></h1>
+    <h1>Museo y Centro Cultural <em>Masónico</em></h1>
     <p class="lede">Conservar, exhibir y abrir al público el patrimonio histórico, documental y arquitectónico de la Masonería paraguaya — un siglo y medio de objetos, documentos y memoria reunidos en un solo espacio.</p>
   </div>
 </section>
@@ -173,6 +173,7 @@ include __DIR__ . '/includes/header.php';
   </div>
 </section>
 
+<?php /* OCULTO — Recorrido Virtual y Tour Autoguiado (a pedido del cliente, 2026-07). Reactivar quitando este comentario.
 <!-- Próximamente highlights (después del contenido principal) -->
 <section class="section section-paper">
   <div class="wrap">
@@ -203,6 +204,7 @@ include __DIR__ . '/includes/header.php';
     </div>
   </div>
 </section>
+*/ ?>
 
 <!-- Lightbox -->
 <div class="lightbox" id="lightbox">

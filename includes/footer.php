@@ -15,7 +15,7 @@
           <li><a href="<?= $base ?>gran-logia.php">Gran Logia</a></li>
           <li><a href="<?= $base ?>historia.php">Historia</a></li>
           <li><a href="<?= $base ?>noticias/">Noticias</a></li>
-          <li><a href="<?= $base ?>centro-cultural.php">Centro Cultural</a></li>
+          <li><a href="<?= $base ?>centro-cultural.php">Museo y Centro Cultural</a></li>
           <li><a href="<?= $base ?>masoneria.php">Masonería</a></li>
           <li><a href="<?= $base ?>filantropia.php">Filantropía</a></li>
           <li><a href="<?= $base ?>grandes-maestros.php">Grandes Maestros</a></li>

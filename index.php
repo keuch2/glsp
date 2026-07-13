@@ -183,14 +183,16 @@ include __DIR__ . '/includes/header.php';
     <div class="section-head reveal">
       <div>
         <div class="chapter-mark"><span class="num">Nº 04</span><span class="line"></span><span class="label">Patrimonio</span></div>
-        <h2>Centro Cultural <em>Masónico</em></h2>
+        <h2>Museo y Centro Cultural <em>Masónico</em></h2>
       </div>
       <p class="lede">Un espacio para conservar, exhibir y abrir al público el patrimonio histórico, documental y cultural de la Masonería paraguaya.</p>
     </div>
     <div class="cc-teaser reveal">
       <div class="cc-teaser-img">
         <img src="glsp_assets/masoneria-slide01.jpg" alt="Templo Histórico de Palma">
+        <?php /* OCULTO — badge "Visita virtual disponible" (a pedido del cliente, 2026-07)
         <div class="cc-teaser-overlay"><span class="cc-teaser-tag">Visita virtual disponible</span></div>
+        */ ?>
       </div>
       <div class="cc-teaser-pills">
         <span class="pill"><i class="fas fa-landmark"></i> Museo</span>
@@ -198,7 +200,7 @@ include __DIR__ . '/includes/header.php';
         <span class="pill"><i class="fas fa-torii-gate"></i> Templos</span>
         <span class="pill"><i class="fas fa-masks-theater"></i> Eventos</span>
       </div>
-      <div class="cc-teaser-cta"><a href="centro-cultural.php" class="btn-primary">Visitar el Centro Cultural <i class="fas fa-arrow-right"></i></a></div>
+      <div class="cc-teaser-cta"><a href="centro-cultural.php" class="btn-primary">Visitar el Museo <i class="fas fa-arrow-right"></i></a></div>
     </div>
   </div>
 </section>

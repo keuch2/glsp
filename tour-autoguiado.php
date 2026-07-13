@@ -1,4 +1,9 @@
 <?php
+// OCULTO a pedido del cliente (2026-07): la página del Tour Autoguiado no debe
+// ser accesible. Redirige al Museo y Centro Cultural. Para reactivar, quitar este bloque.
+header('Location: /centro-cultural.php', true, 302);
+exit;
+
 $activePage = 'tour';
 $pageTitle  = 'Tour Autoguiado — Gran Logia Simbólica del Paraguay';
 require_once __DIR__ . '/includes/db.php';
